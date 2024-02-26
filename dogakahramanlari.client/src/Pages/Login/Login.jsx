@@ -1,7 +1,7 @@
 import React from 'react'
 import Background from '../Background/Background';
 import { LoginWrapper } from './Login.style';
-import { Password, UserIcon } from '../../assets/svg/icons';
+import { BackIcon, Password, UserIcon } from '../../assets/svg/icons';
 
 const Login = () => {
   return (
@@ -22,6 +22,10 @@ const Login = () => {
                         <input type='password' className='input' placeholder='Şifre'/>
                     </div>
                 </div>
+            </div>
+            <div className='button-container'>
+                <button className='back-icon'> <BackIcon /> </button>
+                <button className='button'>Girişi Tamamla</button>
             </div>
         </div>
     </LoginWrapper>

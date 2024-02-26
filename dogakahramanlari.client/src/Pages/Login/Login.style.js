@@ -20,6 +20,10 @@ export const LoginWrapper = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50% , -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         .input-container {
             display: flex;
             justify-content: center;
@@ -53,10 +57,24 @@ export const LoginWrapper = styled.div`
                         border-radius: 7px;
                         padding: 10px 30px;
                         color: #757575;
-;
                     }
                 }
            }
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 40px;
+            .back-icon {
+                background-color: transparent;
+                padding: 0;
+            }
+            .button {
+                background-color: #A1C298;
+                padding: 15px;
+                font-weight: bold;
+            }
         }
     }
 `;
