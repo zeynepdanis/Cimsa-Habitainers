@@ -44,6 +44,7 @@ export const LoginWrapper = styled.div`
                 display: flex;
                 flex-direction: column;
                 flex-direction: center;
+                gap: 10px;
                 width: 300px;
                 padding: 10px;
                 border-radius: 0 0 10px 10px;
