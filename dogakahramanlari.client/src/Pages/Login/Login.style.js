@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const LoginWrapper = styled.div`
+export const BackgroundWrapper = styled.div`
     .background {
         width:100vw;
         height: 100vh;

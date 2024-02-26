@@ -1,13 +1,13 @@
 import React from 'react'
 import backgroundImage from '../../assets/pngs/background.jpg';
-import { LoginWrapper } from '../Login/Login.style';
+import { BackgroundWrapper } from '../Login/Login.style';
 
 
 const Background = () => {
   return (
-    <LoginWrapper>
+    <BackgroundWrapper>
         <img className='background blur' src={backgroundImage}/>
-    </LoginWrapper>
+    </BackgroundWrapper>
   )
 }
 
