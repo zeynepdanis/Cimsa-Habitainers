@@ -9,6 +9,6 @@ const Background = () => {
         <img className='background blur' src={backgroundImage}/>
     </BackgroundWrapper>
   )
-}
+};
 
-export default Background
+export default Background;
