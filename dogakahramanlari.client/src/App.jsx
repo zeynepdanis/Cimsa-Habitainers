@@ -1,5 +1,5 @@
 import Login from './Pages/Login/Login';
-import Anasayfa from './Pages/Anasayfa/Anasayfa';
+import Home from './Pages/Home/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/anasayfa' element={<Anasayfa />} />
+          <Route index element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
