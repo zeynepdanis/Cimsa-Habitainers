@@ -4,8 +4,19 @@ import { HomeWrapper } from './Home.style';
 const Home = () => {
   return (
     <HomeWrapper>
-        <Background />
+      <Background />
+
+      <div className='header'>DOĞA KAHRAMANLARI</div>
+      <div className='container'>
+        <div className='button-container'>
+          <button className='button'> GİRİŞ YAP </button>
+          <button className='button'>KAYIT OL</button>
+        </div>
+      </div>
+
     </HomeWrapper>
+
+
   )
 }
 
