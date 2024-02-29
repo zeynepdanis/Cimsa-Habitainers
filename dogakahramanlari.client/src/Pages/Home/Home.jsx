@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <HomeWrapper>
       <Background />
-
       <div className='header'>DOĞA KAHRAMANLARI</div>
       <div className='container'>
         <div className='button-container'>

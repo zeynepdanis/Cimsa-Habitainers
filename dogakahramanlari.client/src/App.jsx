@@ -3,6 +3,7 @@ import Home from "./Pages/Home/Home";
 import Register from "./Pages/Register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route index element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} /> 
         </Routes>
       </BrowserRouter>
     </div>
