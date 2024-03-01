@@ -34,18 +34,18 @@ namespace DogaKahramanlari.Server.Controllers
             return StatusCode(201);
         }
 
-        //[HttpPost("login")]
-        //public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
-        //{
-        //    if (!await _service.AuthenticationService.ValidateUser(user))
-        //        return Unauthorized(); // 401
+        [HttpPost("login")]
+        public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
+        {
+            if (!await _service.AuthenticationService.ValidateUser(user))
+                return Unauthorized(); // 401
 
-        //    var tokenDto = await _service
-        //        .AuthenticationService
-        //        .CreateToken(populateExp: true);
+            var tokenDto = await _service
+                .AuthenticationService
+                .CreateToken(populateExp: true);
 
-        //    return Ok(tokenDto);
-        //}
+            return Ok(tokenDto);
+        }
 
         //[HttpPost("refresh")]
         //public async Task<IActionResult> Refresh([FromBody] TokenDto tokenDto)
