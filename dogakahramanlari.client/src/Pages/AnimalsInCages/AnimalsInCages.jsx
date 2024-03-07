@@ -68,7 +68,7 @@ const AnimalsInCages = () => {
             <img src="/animals/cage.png" className="cage"/>
             <button id="keyOpen" onClick={() => openPopup(animal)} >
               
-              {animal.value}/{keyNumber}</button>
+              {keyNumber}/{animal.value}</button>
           </div>
         ))}
       </div>
