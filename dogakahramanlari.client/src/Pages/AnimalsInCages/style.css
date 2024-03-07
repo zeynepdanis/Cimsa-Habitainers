@@ -15,6 +15,7 @@ body {
   width: 1300px;
   height: 600px;
   padding: 10px;
+  
 }
 #holder {
   margin: 30px;
@@ -34,9 +35,9 @@ body {
 #text h1 {
   color: #000;
   font-family: Inter;
-  font-size: 30px;
+  font-size: 35px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 1000;
   line-height: normal;
 }
 #key {
@@ -66,27 +67,55 @@ body {
   line-height: normal;
 }
 #animal-grid {
-
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 sütun */
-  grid-template-rows: repeat(3, 1fr);    /* 3 satır */
-  gap: 10px; /* Sütun ve satırlar arasındaki boşluk */
-  margin-left:100px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  margin-left: 100px;
   margin-right: 80px;
-
 }
 
 .animal {
-  border: 1px solid #ccc; /* Sınırları göstermek için, isteğe bağlı */
+  /*border: 1px solid #ccc;*/
   padding: 10px;
   text-align: center;
+  position: relative;
 }
+
 .animal img {
-  width: 110px; 
-  height: 110px; 
+  width: 115px;
+  height: 115px;
 }
-.animal:hover .animal-image {
-  transform: scale(1.1);
+
+.cage {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 25px;
+  top: 0;
+  z-index: 1;
+}
+
+img.cage {
+  width: 80%; /* .cage içindeki resmi 200% genişlikte yapar */
+  height: 100%; /* .cage içindeki resmi 200% yükseklikte yapar */
+}
+
+#keyOpen:hover  {
+  background-color: #0e70d9;
+}
+#keyOpen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Butonu en öne çıkarmak için z-index kullanılır */
+  background: rgba(130, 131, 127, 0.7);
+  width: 100px;
+  height: 60px;
+  font-size: 25px;
+  text-align: center;
+ 
 }
 
 /* Pop-up stilleri */

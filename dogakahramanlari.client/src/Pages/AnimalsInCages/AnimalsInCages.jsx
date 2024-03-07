@@ -31,17 +31,17 @@ const AnimalsInCages = () => {
 
   const animals = [
     { id: 1, name: "Monkey", image: "/animals/sad_monkey.png", content: "Monkey içeriği", key: 1, value: 2 },
-    { id: 2, name: "Lion", image: "/animals/sad_lion.png", content: "Lion içeriği", key: 2, value: 3 },
-    { id: 3, name: "Elephant", image: "/animals/sad_elephant.png", content: "Elephant içeriği", key: 3, value: 4 },
-    { id: 4, name: "Owl", image: "/animals/sad_owl.png", content: "Owl içeriği", key: 4, value: 5 },
-    { id: 5, name: "Fox", image: "/animals/sad_fox.png", content: "Fox içeriği", key: 5, value: 6 },
+    { id: 2, name: "Lion", image: "/animals/sad_lion.png", content: "Lion içeriği", key: 2, value: 6 },
+    { id: 3, name: "Elephant", image: "/animals/sad_elephant.png", content: "Elephant içeriği", key: 3, value: 7 },
+    { id: 4, name: "Owl", image: "/animals/sad_owl.png", content: "Owl içeriği", key: 4, value: 8},
+    { id: 5, name: "Fox", image: "/animals/sad_fox.png", content: "Fox içeriği", key: 5, value: 2 },
     { id: 6, name: "Beaver", image: "/animals/sad_beaver.png", content: "Beaver içeriği", key: 6, value: 7 },
-    { id: 7, name: "Rabbit", image: "/animals/sad_rabbit.png", content: "Rabbit içeriği", key: 7, value: 8 },
-    { id: 8, name: "Cat", image: "/animals/sad_cat.png", content: "Cat içeriği", key: 8, value: 9 },
-    { id: 9, name: "Dog", image: "/animals/sad_dog.png", content: "Dog içeriği", key: 9, value: 10 },
-    { id: 10, name: "Flamingo", image: "/animals/sad_flamingo.png", content: "Flamingo içeriği", key: 10, value: 11 },
-    { id: 11, name: "Reindeer", image: "/animals/sad_reindeer.png", content: "Reindeer içeriği", key: 11, value: 12 },
-    { id: 12, name: "Frog", image: "/animals/sad_frog.png", content: "Frog içeriği", key: 12, value: 13 },
+    { id: 7, name: "Rabbit", image: "/animals/sad_rabbit.png", content: "Rabbit içeriği", key: 7, value: 3 },
+    { id: 8, name: "Cat", image: "/animals/sad_cat.png", content: "Cat içeriği", key: 8, value: 7 },
+    { id: 9, name: "Dog", image: "/animals/sad_dog.png", content: "Dog içeriği", key: 9, value: 5 },
+    { id: 10, name: "Flamingo", image: "/animals/sad_flamingo.png", content: "Flamingo içeriği", key: 10, value: 2 },
+    { id: 11, name: "Reindeer", image: "/animals/sad_reindeer.png", content: "Reindeer içeriği", key: 11, value: 6 },
+    { id: 12, name: "Frog", image: "/animals/sad_frog.png", content: "Frog içeriği", key: 12, value: 8 },
     // Diğer hayvanlar...
   ];
 
@@ -63,8 +63,12 @@ const AnimalsInCages = () => {
               className="animal-image"
               src={animal.image}
               alt={animal.name}
-              onClick={() => openPopup(animal)}
+              
             />
+            <img src="/animals/cage.png" className="cage"/>
+            <button id="keyOpen" onClick={() => openPopup(animal)} >
+              
+              {animal.value}/{keyNumber}</button>
           </div>
         ))}
       </div>
