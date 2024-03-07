@@ -14,7 +14,7 @@ export const BackgroundWrapper = styled.div`
 export const LoginWrapper = styled.div`
     .login-container {
         background-color: rgba(216, 100, 169, 0.59);
-        padding: 20px 30px;
+        padding: 20px 40px;
         border-radius: 10px;
         position: absolute;
         top: 50%;
@@ -32,7 +32,7 @@ export const LoginWrapper = styled.div`
            .header {
                 background-color: #A1C298;
                 color: #F3FDE8;
-                padding: 10px;
+                padding: 20px;
                 width: 300px;
                 margin-top: 20px;
                 border-radius: 10px 10px 0 0;
@@ -43,20 +43,20 @@ export const LoginWrapper = styled.div`
                 background-color: #C6EBC5;
                 display: flex;
                 flex-direction: column;
-                flex-direction: center;
-                gap: 10px;
+                gap: 15px;
                 width: 300px;
-                padding: 10px;
+                padding: 20px;
                 border-radius: 0 0 10px 10px;
                 .input-area {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 15px;
                     .input {
                         background-color: #F3FDE8;
                         border: none;
+                        flex: 1;
                         border-radius: 7px;
-                        padding: 10px 30px;
+                        padding: 15px;
                         color: #757575;
                     }
                 }
