@@ -17,16 +17,15 @@ export const HomeWrapper = styled.div`
 
         .header{
             padding: 20px 30px;
-        border-radius: 10px;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50% , -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-
+            border-radius: 10px;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
             font-size: 50px;
             color: black;
         }
@@ -46,5 +45,4 @@ export const HomeWrapper = styled.div`
                 font-weight: bold;
             }
         }
-    }
 `;
