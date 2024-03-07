@@ -10,7 +10,7 @@ const AnimalsInCages = () => {
   // Pop-up'ı açmak için kullanılacak fonksiyon
   const openPopup = (animal) => {
     setSelectedAnimal(animal);
-    if (keyNumber >= animal.key) {
+    if (keyNumber >= animal.value) {
       setPopupOpen(true);
     } else {
       setInsufficientKeys(true);
