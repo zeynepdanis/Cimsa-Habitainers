@@ -1,6 +1,6 @@
 import { HomeIcon, KeyIcon } from '../../assets/svg/icons';
 import { TasksWrapper } from './Tasks.style';
-import {keyImage} from '../../assets/pngs/key.png'
+import keyImage from '../../assets/pngs/key.png'
 
 const Tasks = () => {
   return (
@@ -29,12 +29,23 @@ const Tasks = () => {
                 </button>
             </div>
             <div className='key-number'>
-                <span>1</span>
-                <img src='keyImage' />
+                <span>1</span> 
+                <img className='key-image' src={keyImage} alt='keyImage'/>
+            </div>
+        </div>
+        <div className='task-body'>
+            <div className='task-head'>
+                <div>
+                    <span>Günlük Görevler</span>
+                </div> 
+                <div className='line'></div>
+                <div>
+                    <span>Haftalık Görevler</span>
+                </div>  
             </div>
         </div>
     </TasksWrapper>
   )
 }
 
-export default Tasks
+export default Tasks;
