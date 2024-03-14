@@ -2,8 +2,16 @@ import React from 'react'
 import Background from '../Background/Background';
 import { LoginWrapper } from './Login.style';
 import { BackIcon, Password, UserIcon } from '../../assets/svg/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
+    
+    const backHomeHandler = () => {
+        const newPath = '/';
+        navigate(newPath);
+    };
+
   return (
     <LoginWrapper>
         <Background />
@@ -24,7 +32,7 @@ const Login = () => {
                 </div>
             </div>
             <div className='button-container'>
-                <button className='back-icon'> <BackIcon /> </button>
+                <button onClick={backHomeHandler} className='back-icon'> <BackIcon /> </button>
                 <button className='button'>Girişi Tamamla</button>
             </div>
         </div>
