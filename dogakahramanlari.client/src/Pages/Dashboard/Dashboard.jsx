@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { Animals } from "../../assets/svg/icons"
 import { DashboardWrapper } from "./Dashboard.style"
 
 const Dashboard = () => {
+  const navigate = useNavigate();  
+
+  const openTasksHandler = () => {
+    const newPath = '/tasks';
+    navigate(newPath);
+  }; 
+
   return (
     <DashboardWrapper>
         <div className="dashboard">
@@ -19,7 +27,10 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="button-container">
-                <button className="dashboard-button">
+                <button 
+                    onClick={openTasksHandler}
+                    className="dashboard-button"
+                >
                     Görevler
                 </button>
                 <button className="dashboard-button">
