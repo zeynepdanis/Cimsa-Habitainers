@@ -1,0 +1,184 @@
+.forest-wrapper {
+    background-image: url(../../assets/jpgs/forest_background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+.forest-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 180px;
+}
+
+.forest-header {
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-position: center;
+    background: rgba(184, 193, 244, 0.56);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.forest-header h1 {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Seymour One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    line-height: normal;
+    letter-spacing: 12.6px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 30px 50px;
+}
+
+.forest-header2 h1 {
+    position: absolute;
+    left: 532px;
+    top: 106px;
+    color: #124B08;
+    text-align: center;
+    font-family: "Seymour One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    line-height: normal;
+    letter-spacing: 12.6px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 30px 50px;
+}
+
+
+/* Monkey */
+.animal-1 {
+    position: absolute;
+    width: 135px;
+    height: auto;
+    left: 65px;
+    top: 225px;
+}
+
+/* Lion */
+.animal-2 {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    top: 185px;
+    right: 340px;
+}
+
+/* Giraffe */
+.animal-3 {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    left: 150px;
+    top: 140px;
+}
+
+/* Owl */
+.animal-4 {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    left: 25px;
+    top: 125px;
+    transform: rotate(-2deg);
+}
+
+
+/* Fox */
+.animal-5 {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 304px;
+    left: 140px;
+}
+
+/* Beaver */
+.animal-6 {
+    position: absolute;
+    width: 154px;
+    height: auto;
+    right: 40px;
+    top: 190px;
+}
+
+
+/* Rabbit */
+.animal-7 {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    top: 320px;
+    left: 20px;
+}
+
+/* Cat */
+.animal-8 {
+    position: absolute;
+    width: 110px;
+    height: auto;
+    bottom: 0px;
+    left: 290px;
+}
+
+/* Dog */
+.animal-9 {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    bottom: 0px;
+    right: 280px;
+}
+
+/* Flamingo */
+.animal-10 {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    top: 280px;
+    right: 140px;
+}
+
+/* Reindeer */
+.animal-11 {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    top: 170px;
+    right: 200px;
+}
+
+/* Frog */
+.animal-12 {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    top: 340px;
+    right: 68px;
+}
+
+
+/* Parrot */
+.animal-13 {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    top: 30px;
+    right: 65px;
+    transform: rotate(5.47deg);
+}
