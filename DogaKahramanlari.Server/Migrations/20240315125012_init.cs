@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class CreatingIdentityTables : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +32,8 @@ namespace DogaKahramanlari.Server.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -157,6 +159,11 @@ namespace DogaKahramanlari.Server.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "cde68016-aec0-40bf-831f-82672e4bc6e4", null, "Teacher", "TEACHER" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

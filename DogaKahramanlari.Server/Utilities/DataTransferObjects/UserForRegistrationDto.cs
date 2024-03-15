@@ -12,8 +12,6 @@ namespace DogaKahramanlari.Server.Utilities.DataTransferObjects
 
         [Required(ErrorMessage = "Password is required.")]
         public string? Password { get; init; }
-        public string? PhoneNumber { get; init; }
-
         public ICollection<string>? Roles { get; init; }
 
     }
