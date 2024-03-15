@@ -1,0 +1,67 @@
+.home-wrapper {
+    background-image: url(../../assets/pngs/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+
+.home-header-container {
+    text-align: center;
+}
+
+.home-header {
+    padding: 60px 60px 0px 60px;
+    font-family: "Seymour One", sans-serif;
+    font-size: 70px;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.home-header2 {
+    position: absolute;
+    top: 8px;
+    left: 116px;
+    padding: 60px 60px 0px 60px;
+    font-family: "Seymour One", sans-serif;
+    font-size: 70px;
+    color: #124B08;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.home-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-button {
+    background-color: transparent;
+    padding: 15px;
+    font-weight: bold;
+    position: relative;
+    margin: 0px 60px;
+}
+
+.home-text {
+
+    font-size: 25px;
+    color: black;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board-img {
+    width: 450px;
+    height: auto;
+}

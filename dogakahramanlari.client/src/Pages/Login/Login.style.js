@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 
 export const BackgroundWrapper = styled.div`
     .background {
+        size:cover;
+        position: center;
+        repeat:no-repeat
         width:100vw;
         height: 100vh;
-        position: relative;
         &.blur {
             filter: blur(4px)
         }
