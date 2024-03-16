@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Background from '../Background/Background';
 import { LoginWrapper } from './Login.style';
 import { BackIcon, Password, UserIcon } from '../../assets/svg/icons';
