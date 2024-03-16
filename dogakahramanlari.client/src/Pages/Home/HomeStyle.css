@@ -51,14 +51,31 @@
     margin: 0px 60px;
 }
 
-.home-text {
 
-    font-size: 25px;
-    color: black;
+.home-text-container {
+    width: 240px;
+    height: 100px;
+    background-color: rgba(251, 236, 255, 0.4);
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     position: absolute;
-    top: 53%;
+    top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.home-text-container:hover {
+    background-color: #ffffff;
+}
+
+.home-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1800px;
+    font-size: 30px;
+    color: rgb(22, 22, 78);
+
 }
 
 .board-img {
