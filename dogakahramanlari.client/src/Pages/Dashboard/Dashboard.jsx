@@ -5,11 +5,6 @@ import { DashboardWrapper } from "./Dashboard.style"
 const Dashboard = () => {
   const navigate = useNavigate();  
 
-  const openTasksHandler = () => {
-    const newPath = '/tasks';
-    navigate(newPath);
-  }; 
-
   return (
     <DashboardWrapper>
         <div className="dashboard">
@@ -28,15 +23,21 @@ const Dashboard = () => {
             </div>
             <div className="button-container">
                 <button 
-                    onClick={openTasksHandler}
+                    onClick={() => navigate('/tasks')}
                     className="dashboard-button"
                 >
                     Görevler
                 </button>
-                <button className="dashboard-button">
+                <button
+                    onClick={() => navigate('/cages')}
+                    className="dashboard-button"
+                >
                     Hayvanlar
                 </button>
-                <button className="dashboard-button">
+                <button 
+                    onClick={() => navigate('/forest')}
+                    className="dashboard-button"
+                >
                     Orman
                 </button>
             </div>

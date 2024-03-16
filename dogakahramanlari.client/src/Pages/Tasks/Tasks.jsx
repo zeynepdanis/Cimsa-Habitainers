@@ -1,12 +1,21 @@
 import { HomeIcon, KeyIcon } from '../../assets/svg/icons';
 import { TasksWrapper } from './Tasks.style';
 import keyImage from '../../assets/pngs/key.png'
+import { useNavigate } from 'react-router-dom';
 
 const Tasks = () => {
+  const navigate = useNavigate();  
+
+  const backDashboard = () => {
+    const newPath = '/dashboard';
+    navigate(newPath);
+  };  
+
   return (
     <TasksWrapper>
         <div className='header'>
             <button
+                onClick={backDashboard}
                 className='home-icon'
             >
                 <HomeIcon />
