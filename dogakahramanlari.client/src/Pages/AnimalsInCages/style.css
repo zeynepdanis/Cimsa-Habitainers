@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
 
+
 body {
   background-image: url("../../assets/jpgs/forest_background_transparency.jpg");
   background-size: cover;
@@ -219,28 +220,30 @@ img.cage {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
-.header{
+
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: -60px;
 
 }
-.header h1{
+
+.header h1 {
   color: #1D647E;
-text-align: center;
-font-family: "Seymour One", sans-serif;
+  text-align: center;
+  font-family: "Seymour One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
-line-height: normal;
-letter-spacing: 12.6px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  line-height: normal;
+  letter-spacing: 12.6px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
 .pagination {
-  
+
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -248,14 +251,14 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 .pagination button {
   padding: 10px;
-  background-color:transparent;
+  background-color: transparent;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
   color: #000;
-  font-size:large;
+  font-size: large;
 }
 
 .pagination button:hover {

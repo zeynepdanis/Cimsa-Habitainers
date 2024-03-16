@@ -1,7 +1,7 @@
+import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "./style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
 const AnimalsInCages = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -172,7 +172,7 @@ const AnimalsInCages = () => {
     <div>
       <div className="header">
         <h1>HAYVANLAR</h1>
-      
+
       </div>
 
       <div className="container">

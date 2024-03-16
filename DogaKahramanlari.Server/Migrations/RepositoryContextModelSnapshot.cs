@@ -22,6 +22,189 @@ namespace DogaKahramanlari.Server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DogaKahramanlari.Server.Models.Animal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagesNormal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagesStatus1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Key")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Animals");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Monkey İçeriği",
+                            ImagesNormal = "/black-animals/black-monkey.png",
+                            ImagesStatus1 = "/animals/monkey.png",
+                            Key = 1,
+                            Name = "Monkey",
+                            Status = 0,
+                            Value = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "Lion İçeriği",
+                            ImagesNormal = "/black-animals/black-lion.png",
+                            ImagesStatus1 = "/animals/lion.png",
+                            Key = 2,
+                            Name = "Lion",
+                            Status = 0,
+                            Value = 6
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Content = "Giraffe İçeriği",
+                            ImagesNormal = "/black-animals/black-giraffe.png",
+                            ImagesStatus1 = "/animals/giraffe.png",
+                            Key = 3,
+                            Name = "Giraffe",
+                            Status = 0,
+                            Value = 7
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Content = "Owl İçeriği",
+                            ImagesNormal = "/black-animals/black-owl.png",
+                            ImagesStatus1 = "/animals/owl.png",
+                            Key = 4,
+                            Name = "Owl",
+                            Status = 0,
+                            Value = 8
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Content = "Fox İçeriği",
+                            ImagesNormal = "/black-animals/black-fox.png",
+                            ImagesStatus1 = "/animals/fox.png",
+                            Key = 5,
+                            Name = "Fox",
+                            Status = 0,
+                            Value = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Content = "Beaver İçeriği",
+                            ImagesNormal = "/black-animals/black-beaver.png",
+                            ImagesStatus1 = "/animals/beaver.png",
+                            Key = 6,
+                            Name = "Beaver",
+                            Status = 0,
+                            Value = 7
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Content = "Rabbit İçeriği",
+                            ImagesNormal = "/black-animals/black-rabbit.png",
+                            ImagesStatus1 = "/animals/rabbit.png",
+                            Key = 7,
+                            Name = "Rabbit",
+                            Status = 0,
+                            Value = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Content = "Cat İçeriği",
+                            ImagesNormal = "/black-animals/black-cat.png",
+                            ImagesStatus1 = "/animals/cat.png",
+                            Key = 8,
+                            Name = "Cat",
+                            Status = 0,
+                            Value = 7
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Content = "Dog İçeriği",
+                            ImagesNormal = "/black-animals/black-dog.png",
+                            ImagesStatus1 = "/animals/dog.png",
+                            Key = 9,
+                            Name = "Dog",
+                            Status = 0,
+                            Value = 5
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Content = "Flamingo İçeriği",
+                            ImagesNormal = "/black-animals/black-flamingo.png",
+                            ImagesStatus1 = "/animals/flamingo.png",
+                            Key = 10,
+                            Name = "Flamingo",
+                            Status = 0,
+                            Value = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Content = "Reindeer İçeriği",
+                            ImagesNormal = "/black-animals/black-reindeer.png",
+                            ImagesStatus1 = "/animals/reindeer.png",
+                            Key = 11,
+                            Name = "Reindeer",
+                            Status = 0,
+                            Value = 6
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Content = "Frog İçeriği",
+                            ImagesNormal = "/black-animals/black-frog.png",
+                            ImagesStatus1 = "/animals/frog.png",
+                            Key = 12,
+                            Name = "Frog",
+                            Status = 0,
+                            Value = 8
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Content = "Parrot İçeriği",
+                            ImagesNormal = "/black-animals/black-parrot.png",
+                            ImagesStatus1 = "/animals/parrot.png",
+                            Key = 13,
+                            Name = "Parrot",
+                            Status = 0,
+                            Value = 3
+                        });
+                });
+
             modelBuilder.Entity("DogaKahramanlari.Server.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -128,7 +311,11 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = "7d3a1fd1-a7d3-44a7-a46b-a9542d849f5a",
+=======
+                            Id = "d8fda1c6-9cda-4de4-b926-dc7340b77945",
+>>>>>>> 93ef64648b0dc793745263c0157b37970b551ad0
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });

@@ -48,8 +48,12 @@ namespace DogaKahramanlari.Server.Services
             return new TokenDto()
             {
                 AccessToken = accessToken,
-                RefreshToken = refreshToken
-            };
+                RefreshToken = refreshToken,
+                FirstName = _user.FirstName,
+                LastName = _user.LastName,
+                UserName = _user.UserName  
+
+    };
         }
 
         public async Task<IdentityResult> RegisterUser(UserForRegistrationDto userForRegistrationDto)
