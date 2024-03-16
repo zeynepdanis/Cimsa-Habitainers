@@ -1,26 +1,28 @@
-import { HomeStar } from '../../assets/svg/icons';
-import Background from '../Background/Background';
-import { HomeWrapper } from './Home.style';
+import "./HomeStyle.css";
 
 const Home = () => {
   return (
-    <HomeWrapper>
-      <Background />
-      <div className='header'>DOĞA KAHRAMANLARI</div>
+
+    <div className='home-wrapper'>
+      <div className='home-header-container'>
+        <div className='home-header'>DOĞA KAHRAMANLARI</div>
+        <div className='home-header2'>DOĞA KAHRAMANLARI</div>
+      </div>
+
       <div className='home-container'>
-        <div className='button-container'>
-          <button className='button'> 
-            <span className='text'>GİRİŞ YAP</span>
-            <HomeStar />
+        <div className='home-button-container'>
+          <button className='home-button'>
+            <span className='home-text'>GİRİŞ YAP</span>
+            <img className='board-img' src="/icon/board.png" alt="board-icon" />
           </button>
-          <button className='button'> 
-            <span className='text'>KAYIT OL</span>
-            <HomeStar />
+          <button className='home-button'>
+            <span className='home-text'>KAYIT OL</span>
+            <img className='board-img' src="/icon/board.png" alt="board-icon" />
           </button>
         </div>
       </div>
+    </div>
 
-    </HomeWrapper>
 
 
   )

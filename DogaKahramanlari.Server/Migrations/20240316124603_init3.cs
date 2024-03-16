@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -204,7 +204,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "314d4d30-079b-4572-a179-14a8a36bddfc", null, "Teacher", "TEACHER" });
+                values: new object[] { "d8fda1c6-9cda-4de4-b926-dc7340b77945", null, "Teacher", "TEACHER" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
