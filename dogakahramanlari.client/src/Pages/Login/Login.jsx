@@ -27,16 +27,23 @@ const Login = () => {
     };
 
     const loginHandler = async () => {
+        try {
             const loginRequest = await fetch('http://localhost:5120/api/authentication/login', {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({username: loginData.username, password: loginData.password})
-            });
-            const content = await loginRequest.json();
-            console.log(content)
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: loginData.username, password: loginData.password})
+              });
+              const content = await loginRequest.json();
+              console.log(content)
+              window.localStorage.setItem('token', content.accessToken);
+              navigate('/dashboard');
+        } catch (error) {
+            console.error(error);
+            alert('Giriş Yapılamadı');
+        }
     };
 
   return (
