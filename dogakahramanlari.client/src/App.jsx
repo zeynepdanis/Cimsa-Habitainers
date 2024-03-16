@@ -20,6 +20,11 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/tasks" element={<Tasks />} />
+          <Route path="*" element={<div style={{
+            fontSize: '50px',
+            color: 'green',
+            fontWeight: 'bold'
+          }}>Sayfa Bulunamadi</div>} />
         </Routes>
       </BrowserRouter>
     </div>
