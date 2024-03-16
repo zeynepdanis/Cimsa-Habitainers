@@ -56,6 +56,9 @@ builder.Services.AddSwaggerGen(opt =>
 
 var app = builder.Build();
 
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
