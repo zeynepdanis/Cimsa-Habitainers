@@ -13,7 +13,7 @@ namespace DogaKahramanlari.Server.Repositories
 
         public async Task<IEnumerable<Animal>> GetAllAnimalsAsync(bool trackChanges) =>
              await FindAll(trackChanges)
-                .ToListAsync();
+                .ToListAsync(); 
 
         public async Task<Animal> GetOneAnimalByIdAsync(int id, bool trackChanges) =>
             await FindByCondition(c => c.Id.Equals(id), trackChanges)
