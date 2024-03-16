@@ -3,14 +3,35 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class CreatingIdentityTables : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Animals",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImagesNormal = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImagesStatus1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Key = table.Column<int>(type: "int", nullable: false),
+                    Value = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Animals", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -32,6 +53,8 @@ namespace DogaKahramanlari.Server.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -158,6 +181,31 @@ namespace DogaKahramanlari.Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Animals",
+                columns: new[] { "Id", "Content", "ImagesNormal", "ImagesStatus1", "Key", "Name", "Status", "Value" },
+                values: new object[,]
+                {
+                    { 1, "Monkey İçeriği", "/black-animals/black-monkey.png", "/animals/monkey.png", 1, "Monkey", 0, 2 },
+                    { 2, "Lion İçeriği", "/black-animals/black-lion.png", "/animals/lion.png", 2, "Lion", 0, 6 },
+                    { 3, "Giraffe İçeriği", "/black-animals/black-giraffe.png", "/animals/giraffe.png", 3, "Giraffe", 0, 7 },
+                    { 4, "Owl İçeriği", "/black-animals/black-owl.png", "/animals/owl.png", 4, "Owl", 0, 8 },
+                    { 5, "Fox İçeriği", "/black-animals/black-fox.png", "/animals/fox.png", 5, "Fox", 0, 2 },
+                    { 6, "Beaver İçeriği", "/black-animals/black-beaver.png", "/animals/beaver.png", 6, "Beaver", 0, 7 },
+                    { 7, "Rabbit İçeriği", "/black-animals/black-rabbit.png", "/animals/rabbit.png", 7, "Rabbit", 0, 3 },
+                    { 8, "Cat İçeriği", "/black-animals/black-cat.png", "/animals/cat.png", 8, "Cat", 0, 7 },
+                    { 9, "Dog İçeriği", "/black-animals/black-dog.png", "/animals/dog.png", 9, "Dog", 0, 5 },
+                    { 10, "Flamingo İçeriği", "/black-animals/black-flamingo.png", "/animals/flamingo.png", 10, "Flamingo", 0, 2 },
+                    { 11, "Reindeer İçeriği", "/black-animals/black-reindeer.png", "/animals/reindeer.png", 11, "Reindeer", 0, 6 },
+                    { 12, "Frog İçeriği", "/black-animals/black-frog.png", "/animals/frog.png", 12, "Frog", 0, 8 },
+                    { 13, "Parrot İçeriği", "/black-animals/black-parrot.png", "/animals/parrot.png", 13, "Parrot", 0, 3 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "314d4d30-079b-4572-a179-14a8a36bddfc", null, "Teacher", "TEACHER" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -201,6 +249,9 @@ namespace DogaKahramanlari.Server.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Animals");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
