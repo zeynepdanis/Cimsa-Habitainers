@@ -10,6 +10,7 @@ export const DashboardWrapper = styled.div`
         display: flex;
         flex-direction: column;
         gap: 40px;
+        margin: 30px;
         .dashboard-container {
             background: rgba(183, 238, 129, 0.82);
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -18,8 +19,12 @@ export const DashboardWrapper = styled.div`
             color: rgba(48, 92, 4, 0.94);
             font-style: italic;
             font-weight: bold;
-            font-size: 28px;
+            font-size: 24px;
             width: 1000px;
+            .animal-container {
+                display: flex;
+                flex-direction: flex-end;
+            }
         }
         .button-container {
             background-color: transparent;

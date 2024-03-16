@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { Animals } from "../../assets/svg/icons"
 import { DashboardWrapper } from "./Dashboard.style"
 
 const Dashboard = () => {
+  const navigate = useNavigate();  
+
+  const openTasksHandler = () => {
+    const newPath = '/tasks';
+    navigate(newPath);
+  }; 
+
   return (
     <DashboardWrapper>
         <div className="dashboard">
@@ -13,9 +22,15 @@ const Dashboard = () => {
                 tehdit eden büyük bir sorunla karşılaştılar. İşte tam da bu noktada, cesur çocuklar ortaya çıktı ve hayvanların yardımına koştu.
                 Şimdi siz de bir kahraman olabilirsiniz! Biz, hayvanları korumanın ve onlara sevgiyle yardım etmenin önemini anlatan bir web sitesiyiz. Haydi, birlikte hayvanların kurtuluşu için adım atalım!
                 </p>
+                <div className="animal-container">
+                    <Animals />
+                </div>
             </div>
             <div className="button-container">
-                <button className="dashboard-button">
+                <button 
+                    onClick={openTasksHandler}
+                    className="dashboard-button"
+                >
                     Görevler
                 </button>
                 <button className="dashboard-button">
