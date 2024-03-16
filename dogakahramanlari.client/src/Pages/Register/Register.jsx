@@ -8,8 +8,16 @@ import {
   UserIcon,
   UnlockIcon,
 } from "../../assets/svg/icons";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const backHomeHandler = () => {
+    const newPath = '/';
+    navigate(newPath);
+  };
+
   return (
     <RegisterWrapper>
       <Background />
@@ -45,7 +53,7 @@ const Register = () => {
           </div>
         </div>
         <div className="button-container">
-          <button className="back-icon">
+          <button onClick={backHomeHandler} className="back-icon">
             {" "}
             <BackIcon />{" "}
           </button>
