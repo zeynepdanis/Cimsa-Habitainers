@@ -20,8 +20,8 @@ namespace DogaKahramanlari.Server.Repositories
                 .SingleOrDefaultAsync();
 
         public void CreateOneAnimal(Animal animal) => Create(animal);
+        public void UpdateOneAnimal(Animal animal) => Update(animal);
         public void DeleteOneAnimal(Animal animal) => Delete(animal);
-        public void UpdateOneAnimal(Animal animal)=>Update(animal);
     }
         
 

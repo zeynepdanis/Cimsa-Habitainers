@@ -7,8 +7,10 @@ namespace DogaKahramanlari.Server.Services.Contracts
     {
         Task<IEnumerable<Animal>> GetAllAnimalsAsync(bool trackChanges);
         Task<Animal> GetOneAnimalByIdAsync(int id, bool trackChanges);
-
-        //Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDto, bool trackChanges);
-        //Task DeleteOneAnimalAsync(int id, bool trackChanges);
+    
+        Task<AnimalDto> CreateOneAnimalAsync(AnimalDtoForInsertion animalDtoForInsertion);
+      
+        //Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges);
+        Task DeleteOneAnimalAsync(int id, bool trackChanges);
     }
 }
