@@ -39,7 +39,11 @@ const Login = () => {
               const content = await loginRequest.json();
               console.log(content)
               window.localStorage.setItem('token', content.accessToken);
-              navigate('/dashboard');
+              if (200 <= content.status  && content.status <= 299) {
+                navigate('/dashboard')
+              } else {
+                alert('Giriş Yapılamadı')
+              }
         } catch (error) {
             console.error(error);
             alert('Giriş Yapılamadı');
