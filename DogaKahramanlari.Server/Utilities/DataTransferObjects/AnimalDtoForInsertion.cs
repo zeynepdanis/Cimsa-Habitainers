@@ -2,9 +2,10 @@
 {
     public class AnimalDtoForInsertion
     {
-        public int Id { get; set; }
+
         public string Name { get; set; }
-        public string ImageUrl { get; set; }
+        public string ImagesNormal { get; set; }
+        public string ImagesStatus1 { get; set; }
         public string Content { get; set; }
         public int Key { get; set; }
         public int Value { get; set; }
