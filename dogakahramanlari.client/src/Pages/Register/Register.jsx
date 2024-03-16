@@ -29,27 +29,13 @@ const Register = () => {
               <UserIcon />
               <input className="input" placeholder="Kullanıcı Adı" />
             </div>
-            <div className="input-area">
-              <EmailIcon />
-              <input
-                type="email"
-                className="input"
-                placeholder="E-posta Adresi"
-              />
-            </div>
+
 
             <div className="input-area">
               <Password />
               <input type="password" className="input" placeholder="Şifre" />
             </div>
-            <div className="input-area">
-              <UnlockIcon />
-              <input
-                type="password"
-                className="input"
-                placeholder="Şifre Tekrarı"
-              />
-            </div>
+
           </div>
         </div>
         <div className="button-container">
