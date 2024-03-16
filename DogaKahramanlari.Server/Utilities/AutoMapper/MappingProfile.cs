@@ -9,6 +9,7 @@ namespace DogaKahramanlari.Server.Utilities.AutoMapper
         public MappingProfile()
         {
             CreateMap<UserForRegistrationDto, User>();
+
             CreateMap<AnimalDtoForUpdate, Animal>().ReverseMap();
             CreateMap<Animal, AnimalDto>();
             CreateMap<AnimalDtoForInsertion, Animal>();
