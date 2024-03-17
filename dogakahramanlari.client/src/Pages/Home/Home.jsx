@@ -1,18 +1,23 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./HomeStyle.css";
 
+
+
 const Home = () => {
+
   const navigate = useNavigate();
 
-  const openLoginHandler = () => {
-    const newPath = '/login';
-    navigate(newPath);
+  const handleLoginClick = () => {
+    navigate('/login'); // 'login' rotasına yönlendirme yapar
   };
 
-  const openRegisterHandler = () => {
-    const newPath = '/register';
-    navigate(newPath);
+  const handleRegisterClick = () => {
+    navigate('/register'); // 'register' rotasına yönlendirme yapar
   };
+
+
+
 
   return (
 
@@ -21,17 +26,27 @@ const Home = () => {
         <div className='home-header'>DOĞA KAHRAMANLARI</div>
         <div className='home-header2'>DOĞA KAHRAMANLARI</div>
       </div>
+
+      <div className='home-container'>
         <div className='home-button-container'>
-          <button onClick={openLoginHandler} className='home-button'>
-            <span className='home-text'>GİRİŞ YAP</span>
+          <button className='home-button' onClick={handleLoginClick}>
+            <div className="home-text-container">
+              <p className='home-text'>GİRİŞ YAP</p>
+            </div>
             <img className='board-img' src="/icon/board.png" alt="board-icon" />
           </button>
-          <button onClick={openRegisterHandler} className='home-button'>
-            <span className='home-text'>KAYIT OL</span>
+          <button className='home-button' onClick={handleRegisterClick}>
+            <div className="home-text-container">
+              <p className='home-text'>KAYIT OL</p>
+            </div>
             <img className='board-img' src="/icon/board.png" alt="board-icon" />
           </button>
         </div>
       </div>
+    </div>
+
+
+
   )
 }
 

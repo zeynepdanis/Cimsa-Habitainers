@@ -1,14 +1,12 @@
 import React from "react";
-import Background from "../Background/Background";
-import { RegisterWrapper } from "./Register.style";
+import { useNavigate } from "react-router-dom";
 import {
-  EmailIcon,
   BackIcon,
   Password,
-  UserIcon,
-  UnlockIcon,
+  UserIcon
 } from "../../assets/svg/icons";
-import { useNavigate } from "react-router-dom";
+import Background from "../Background/Background";
+import { RegisterWrapper } from "./Register.style";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -25,31 +23,26 @@ const Register = () => {
         <div className="input-container">
           <div className="header">KAYIT OL</div>
           <div className="input-part">
+
+            <div className="input-area">
+              <input className="input" placeholder="Ad" />
+            </div>
+
+            <div className="input-area">
+              <input className="input" placeholder="Soyad" />
+            </div>
+
             <div className="input-area">
               <UserIcon />
               <input className="input" placeholder="Kullanıcı Adı" />
             </div>
-            <div className="input-area">
-              <EmailIcon />
-              <input
-                type="email"
-                className="input"
-                placeholder="E-posta Adresi"
-              />
-            </div>
+
 
             <div className="input-area">
               <Password />
               <input type="password" className="input" placeholder="Şifre" />
             </div>
-            <div className="input-area">
-              <UnlockIcon />
-              <input
-                type="password"
-                className="input"
-                placeholder="Şifre Tekrarı"
-              />
-            </div>
+
           </div>
         </div>
         <div className="button-container">
