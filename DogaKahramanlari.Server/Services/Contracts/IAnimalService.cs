@@ -10,7 +10,8 @@ namespace DogaKahramanlari.Server.Services.Contracts
     
         Task<AnimalDto> CreateOneAnimalAsync(AnimalDtoForInsertion animalDtoForInsertion);
       
-        //Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges);
+        Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges);
+        
         Task DeleteOneAnimalAsync(int id, bool trackChanges);
     }
 }
