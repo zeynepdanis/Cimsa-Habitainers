@@ -12,12 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240316150416_init.Designer.cs
-    [Migration("20240316150416_init")]
-========
-    [Migration("20240316181911_init")]
->>>>>>>> 4e2085b75996fbbbd46ad84178b405b46beb1d3b:DogaKahramanlari.Server/Migrations/20240316181911_init.Designer.cs
-    partial class init
+    [Migration("20240317100338_init9")]
+    partial class init9
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -289,6 +285,26 @@ namespace DogaKahramanlari.Server.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("DogaKahramanlari.Server.Models.UserKey", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("NumberOfKeys")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserKeys");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -318,11 +334,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240316150416_init.Designer.cs
-                            Id = "52d76e38-a048-4ea9-a579-2a86364f3cc7",
-========
-                            Id = "ae07551e-4535-44b8-9c23-c586a4b98c2e",
->>>>>>>> 4e2085b75996fbbbd46ad84178b405b46beb1d3b:DogaKahramanlari.Server/Migrations/20240316181911_init.Designer.cs
+                            Id = "c89e82aa-b2ec-4f5d-9bfb-d55fd32106b8",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
