@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DogaKahramanlari.Server.Models;
+using DogaKahramanlari.Server.Services.Contracts;
 using DogaKahramanlari.Server.Utilities.DataTransferObjects;
 
 namespace DogaKahramanlari.Server.Utilities.AutoMapper
@@ -13,6 +14,11 @@ namespace DogaKahramanlari.Server.Utilities.AutoMapper
             CreateMap<AnimalDtoForUpdate, Animal>().ReverseMap();
             CreateMap<Animal, AnimalDto>();
             CreateMap<AnimalDtoForInsertion, Animal>();
+
+
+            CreateMap<UserKeyDtoForUpdate, UserKey>().ReverseMap();
+            CreateMap<UserKey, UserKeyDto>();
+            CreateMap<UserKeyDtoForInsertion, UserKey>();
 
         }
     }
