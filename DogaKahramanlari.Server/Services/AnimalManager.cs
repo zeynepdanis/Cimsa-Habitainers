@@ -67,6 +67,7 @@ namespace DogaKahramanlari.Server.Services
 
         }
 
+
         public async Task DeleteOneAnimalAsync(int id, bool trackChanges)
         {
             // check entity 
