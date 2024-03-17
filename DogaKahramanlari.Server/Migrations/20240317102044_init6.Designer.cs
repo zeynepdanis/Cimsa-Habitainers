@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240317100338_init9")]
-    partial class init9
+    [Migration("20240317102044_init6")]
+    partial class init6
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -334,7 +334,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c89e82aa-b2ec-4f5d-9bfb-d55fd32106b8",
+                            Id = "ada7821b-f112-4cbf-9116-b5c9ef08741a",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });

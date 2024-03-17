@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init6 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -73,6 +73,20 @@ namespace DogaKahramanlari.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserKeys",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumberOfKeys = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserKeys", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -204,11 +218,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240316150416_init.cs
-                values: new object[] { "52d76e38-a048-4ea9-a579-2a86364f3cc7", null, "Teacher", "TEACHER" });
-========
-                values: new object[] { "ae07551e-4535-44b8-9c23-c586a4b98c2e", null, "Teacher", "TEACHER" });
->>>>>>>> 4e2085b75996fbbbd46ad84178b405b46beb1d3b:DogaKahramanlari.Server/Migrations/20240316181911_init.cs
+                values: new object[] { "ada7821b-f112-4cbf-9116-b5c9ef08741a", null, "Teacher", "TEACHER" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -270,6 +280,9 @@ namespace DogaKahramanlari.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "UserKeys");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
