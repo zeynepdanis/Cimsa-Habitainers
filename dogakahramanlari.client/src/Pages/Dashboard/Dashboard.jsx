@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { AnimalIcon, HomeIcon } from "../../assets/svg/icons"
+import { AnimalIcon } from "../../assets/svg/icons"
 import { DashboardWrapper } from "./Dashboard.style"
 
 const Dashboard = () => {
