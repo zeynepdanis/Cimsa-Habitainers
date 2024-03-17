@@ -51,7 +51,8 @@ namespace DogaKahramanlari.Server.Services
                 RefreshToken = refreshToken,
                 FirstName = _user.FirstName,
                 LastName = _user.LastName,
-                UserName = _user.UserName  
+                UserName = _user.UserName,
+                UserId = _user.Id
 
     };
         }
