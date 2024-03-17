@@ -282,6 +282,26 @@ namespace DogaKahramanlari.Server.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("DogaKahramanlari.Server.Models.UserKey", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("NumberOfKeys")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserKeys");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -311,8 +331,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            // Id = "7d3a1fd1-a7d3-44a7-a46b-a9542d849f5a",
-                            Id = "d8fda1c6-9cda-4de4-b926-dc7340b77945",
+                            Id = "c6ee3e6e-f6d3-46b9-b49c-a19da9d32307",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });

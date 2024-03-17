@@ -5,7 +5,7 @@
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,12 +13,20 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "92898809-7c1b-4eeb-aaaf-06c9afe359c0");
+                keyValue: "055a4507-60bc-46f1-b334-c72b9d5cf30a");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "UserId",
+                table: "UserKeys",
+                type: "nvarchar(max)",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldType: "int");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "7d3a1fd1-a7d3-44a7-a46b-a9542d849f5a", null, "Teacher", "TEACHER" });
+                values: new object[] { "c6ee3e6e-f6d3-46b9-b49c-a19da9d32307", null, "Teacher", "TEACHER" });
         }
 
         /// <inheritdoc />
@@ -27,12 +35,20 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "7d3a1fd1-a7d3-44a7-a46b-a9542d849f5a");
+                keyValue: "c6ee3e6e-f6d3-46b9-b49c-a19da9d32307");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "UserId",
+                table: "UserKeys",
+                type: "int",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "92898809-7c1b-4eeb-aaaf-06c9afe359c0", null, "Teacher", "TEACHER" });
+                values: new object[] { "055a4507-60bc-46f1-b334-c72b9d5cf30a", null, "Teacher", "TEACHER" });
         }
     }
 }

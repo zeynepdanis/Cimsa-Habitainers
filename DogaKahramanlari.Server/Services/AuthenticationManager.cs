@@ -49,11 +49,12 @@ namespace DogaKahramanlari.Server.Services
             {
                 AccessToken = accessToken,
                 RefreshToken = refreshToken,
+                UserId = _user.Id,  
                 FirstName = _user.FirstName,
                 LastName = _user.LastName,
-                UserName = _user.UserName  
+                UserName = _user.UserName
 
-    };
+            };  
         }
 
         public async Task<IdentityResult> RegisterUser(UserForRegistrationDto userForRegistrationDto)

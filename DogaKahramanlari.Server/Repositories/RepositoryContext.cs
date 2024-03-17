@@ -13,11 +13,17 @@ namespace DogaKahramanlari.Server.Repositories
              
         }
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<UserKey> UserKeys { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new AnimalConfig());
+
+            modelBuilder.Entity<UserKey>().HasKey(u => u.Id);
+
 
         }
     }

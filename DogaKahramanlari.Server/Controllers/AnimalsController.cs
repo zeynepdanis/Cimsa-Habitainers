@@ -22,7 +22,7 @@ namespace DogaKahramanlari.Server.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAllAnimalsAsync([FromRoute] int id)
+        public async Task<IActionResult> GetOneAnimalByIdAsync([FromRoute] int id)
         {
             return Ok(await _services
                 .AnimalService
