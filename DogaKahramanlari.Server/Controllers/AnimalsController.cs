@@ -55,6 +55,21 @@ namespace DogaKahramanlari.Server.Controllers
         //    return NoContent(); // 204
         //}
 
+        [HttpPut("{id:int}")]
+        
+        public async Task<IActionResult> UpdateOneAnimalAsync([FromRoute(Name = "id")] int id,
+            [FromBody] AnimalDtoForUpdate animalDto)
+        {
+            if (animalDto is null)
+                return BadRequest(); // 400 
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
+            await _services.AnimalService.UpdateOneAnimalAsync(id, animalDto, false);
+            return Ok(); 
+        }
+
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteOneAnimalAsync([FromRoute(Name = "id")] int id)
         {
