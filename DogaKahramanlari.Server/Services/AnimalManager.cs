@@ -66,6 +66,7 @@ namespace DogaKahramanlari.Server.Services
             await _manager.SaveAsync();
 
         }
+
         public async Task DeleteOneAnimalAsync(int id, bool trackChanges)
         {
             // check entity 
