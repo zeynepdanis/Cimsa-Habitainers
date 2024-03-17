@@ -38,7 +38,7 @@ namespace DogaKahramanlari.Server.Services
             return animal;
         }
 
-        public async Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges)
+        /* public async Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges)
         {
             // check entity
             var entity = await _manager.AnimalRepository.GetOneAnimalByIdAsync(id, trackChanges);
@@ -50,6 +50,21 @@ namespace DogaKahramanlari.Server.Services
 
             _manager.AnimalRepository.Update(entity);
             await _manager.SaveAsync();
+        } */
+
+        public async Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges)
+        {
+            // check entity
+            var entity = await _manager.AnimalRepository.GetOneAnimalByIdAsync(id, trackChanges);
+
+            if (entity is null)
+                throw new ArgumentException("Animal not found.", nameof(id));
+
+            _mapper.Map(animalDtoForUpdate, entity);
+
+            _manager.AnimalRepository.Update(entity);
+            await _manager.SaveAsync();
+
         }
         public async Task DeleteOneAnimalAsync(int id, bool trackChanges)
         {
@@ -70,7 +85,8 @@ namespace DogaKahramanlari.Server.Services
             await _manager.SaveAsync();
             return _mapper.Map<AnimalDto>(entity);
         }
-    }
+
 
     }
 
+}

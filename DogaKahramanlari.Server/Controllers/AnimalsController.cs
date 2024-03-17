@@ -22,7 +22,7 @@ namespace DogaKahramanlari.Server.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetOneAnimalByIdAsync([FromRoute] int id)
+        public async Task<IActionResult> GetAllAnimalsAsync([FromRoute] int id)
         {
             return Ok(await _services
                 .AnimalService
@@ -54,6 +54,21 @@ namespace DogaKahramanlari.Server.Controllers
         //    await _services.AnimalService.UpdateOneAnimalAsync(id, animalDto, false);
         //    return NoContent(); // 204
         //}
+
+        [HttpPut("{id:int}")]
+
+        public async Task<IActionResult> UpdateOneAnimalAsync([FromRoute(Name = "id")] int id,
+            [FromBody] AnimalDtoForUpdate animalDto)
+        {
+            if (animalDto is null)
+                return BadRequest(); // 400 
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
+            await _services.AnimalService.UpdateOneAnimalAsync(id, animalDto, false);
+            return Ok();
+        }
 
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteOneAnimalAsync([FromRoute(Name = "id")] int id)
