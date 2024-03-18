@@ -16,6 +16,12 @@ namespace DogaKahramanlari.Server.Utilities.AutoMapper
             CreateMap<AnimalDtoForInsertion, Animal>();
 
 
+            CreateMap<DutyDtoForUpdate, Duty>().ReverseMap();
+            CreateMap<Duty, DutyDto>();
+            CreateMap<DutyDtoForInsertion, Duty>();
+
+
+
             CreateMap<UserKeyDtoForUpdate, UserKey>().ReverseMap();
             CreateMap<UserKey, UserKeyDto>();
             CreateMap<UserKeyDtoForInsertion, UserKey>();

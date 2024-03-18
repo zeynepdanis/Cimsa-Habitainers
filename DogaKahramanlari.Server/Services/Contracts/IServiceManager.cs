@@ -10,6 +10,8 @@ namespace DogaKahramanlari.Server.Services.Contracts
     {
         IAnimalService AnimalService { get; }
         IUserKeyService UserKeyService { get; }
+
+        IDutyService DutyService { get; }
         IAuthenticationService AuthenticationService { get; }
     }
 }
