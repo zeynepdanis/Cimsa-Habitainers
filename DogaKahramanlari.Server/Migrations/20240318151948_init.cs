@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init6 : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -73,6 +73,21 @@ namespace DogaKahramanlari.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Duties",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DutyStatus = table.Column<byte>(type: "tinyint", nullable: false),
+                    DateStatus = table.Column<byte>(type: "tinyint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Duties", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -218,7 +233,23 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "ada7821b-f112-4cbf-9116-b5c9ef08741a", null, "Teacher", "TEACHER" });
+                values: new object[] { "431470cf-91c2-40df-967b-9ef26ab96e01", null, "Teacher", "TEACHER" });
+
+            migrationBuilder.InsertData(
+                table: "Duties",
+                columns: new[] { "Id", "Content", "DateStatus", "DutyStatus" },
+                values: new object[,]
+                {
+                    { 1, "Su tasarrufu yapmak: Dişlerimizi fırçalarken suyu kapatmayı unutmayalım. Bu sayede gereksiz yere su israfını önlemiş olacağız.", (byte)0, (byte)0 },
+                    { 2, "Geri dönüşüm yapmak: \"Bugün evdeki atık malzemeleri, plastik, kağıt, cam veya metal gibi kategorilere ayıralım. Böylelikle geri dönüşüme katkı sağlamış olacağız.", (byte)0, (byte)0 },
+                    { 3, "Enerji Tasarrufu yapmak: \"Herhangi bir odadan çıktığımızda ışıkları kapatmayı unutmayalım. Böylelikle elektrik tasarrufu yapmış olacağız.", (byte)0, (byte)0 },
+                    { 4, "Bitki sulamak: \"Bitkiler de bizim gibi canlı varlıklardır ve yaşamlarını sürdürmek için suya ihtiyaç duyarlar. Bugün onlara biraz sevgi ve su verelim.", (byte)0, (byte)0 },
+                    { 5, "Hayvanları beslemek: \"Hadi bugün sokak hayvanları için mama kabı ve su kabı hazırlayalım. Hazırladığımız kapları onların yaşam alanlarına yakın bir yere bırakalım.", (byte)0, (byte)0 },
+                    { 6, "Çöp toplamak: \"Bugün çevremizi temizleyelim! Yürürken karşılaştığımız etrafımızdaki çöpleri toplayıp çöp kutusuna atalım. Bu sayede hem doğayı hem de çevremizi temiz tutmuş olacağız.", (byte)0, (byte)0 },
+                    { 7, "Gıda israfını azaltmak: \"Bugünkü görevin, yemeklerini bitirebileceğin kadarını tabağına almak. Bu sayede kalan yemeklerin çöpe gitmesini engel olmuş olacağız.", (byte)0, (byte)0 },
+                    { 8, "Hayvan fotoğrafı çekmek: \"Bugün bir hayvan dostumuzun fotoğrafını çekelim. O hayvan hakkında bilgilendirici bilgileri öğrenip arkadaşlarımızla paylaşalım.", (byte)0, (byte)0 },
+                    { 9, "Ağaç dikmek: \"Hadi birlikte doğayı korumak için bir ağaç veya fidan dikelim. Daha sonra o fidanı sulayalım ve fidanın büyüyüp gelişmesini gözlemleyelim.", (byte)1, (byte)0 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -280,6 +311,9 @@ namespace DogaKahramanlari.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Duties");
 
             migrationBuilder.DropTable(
                 name: "UserKeys");

@@ -205,6 +205,94 @@ namespace DogaKahramanlari.Server.Migrations
                         });
                 });
 
+            modelBuilder.Entity("DogaKahramanlari.Server.Models.Duty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("DateStatus")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("DutyStatus")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Duties");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Su tasarrufu yapmak: Dişlerimizi fırçalarken suyu kapatmayı unutmayalım. Bu sayede gereksiz yere su israfını önlemiş olacağız.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "Geri dönüşüm yapmak: \"Bugün evdeki atık malzemeleri, plastik, kağıt, cam veya metal gibi kategorilere ayıralım. Böylelikle geri dönüşüme katkı sağlamış olacağız.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Content = "Enerji Tasarrufu yapmak: \"Herhangi bir odadan çıktığımızda ışıkları kapatmayı unutmayalım. Böylelikle elektrik tasarrufu yapmış olacağız.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Content = "Bitki sulamak: \"Bitkiler de bizim gibi canlı varlıklardır ve yaşamlarını sürdürmek için suya ihtiyaç duyarlar. Bugün onlara biraz sevgi ve su verelim.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Content = "Hayvanları beslemek: \"Hadi bugün sokak hayvanları için mama kabı ve su kabı hazırlayalım. Hazırladığımız kapları onların yaşam alanlarına yakın bir yere bırakalım.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Content = "Çöp toplamak: \"Bugün çevremizi temizleyelim! Yürürken karşılaştığımız etrafımızdaki çöpleri toplayıp çöp kutusuna atalım. Bu sayede hem doğayı hem de çevremizi temiz tutmuş olacağız.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Content = "Gıda israfını azaltmak: \"Bugünkü görevin, yemeklerini bitirebileceğin kadarını tabağına almak. Bu sayede kalan yemeklerin çöpe gitmesini engel olmuş olacağız.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Content = "Hayvan fotoğrafı çekmek: \"Bugün bir hayvan dostumuzun fotoğrafını çekelim. O hayvan hakkında bilgilendirici bilgileri öğrenip arkadaşlarımızla paylaşalım.",
+                            DateStatus = (byte)0,
+                            DutyStatus = (byte)0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Content = "Ağaç dikmek: \"Hadi birlikte doğayı korumak için bir ağaç veya fidan dikelim. Daha sonra o fidanı sulayalım ve fidanın büyüyüp gelişmesini gözlemleyelim.",
+                            DateStatus = (byte)1,
+                            DutyStatus = (byte)0
+                        });
+                });
+
             modelBuilder.Entity("DogaKahramanlari.Server.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -331,7 +419,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ada7821b-f112-4cbf-9116-b5c9ef08741a",
+                            Id = "431470cf-91c2-40df-967b-9ef26ab96e01",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
