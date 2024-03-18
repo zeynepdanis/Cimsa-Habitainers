@@ -10,6 +10,9 @@ namespace DogaKahramanlari.Server.Services
     {
         private readonly Lazy<IAuthenticationService> _authencationService;
         private readonly Lazy<IAnimalService> _animalService;
+        private readonly Lazy<IUserKeyService> _userKeyService;
+        private readonly Lazy<IDutyService> _dutyService;
+
 
 
         public ServiceManager(IRepositoryManager repositoryManager,
@@ -22,13 +25,22 @@ namespace DogaKahramanlari.Server.Services
             new AuthenticationManager(mapper, userManager, configuration));
 
             _animalService = new Lazy<IAnimalService>(() =>
-           new AnimalManager(repositoryManager));
+           new AnimalManager(repositoryManager, mapper));
+
+            _userKeyService = new Lazy<IUserKeyService>(() =>
+           new UserKeyManager(repositoryManager, mapper, userManager));
+            
+           _dutyService = new Lazy<IDutyService>(() =>
+           new DutyManager(repositoryManager, mapper));
+
 
 
         }
-
         public IAuthenticationService AuthenticationService => _authencationService.Value;
         public IAnimalService AnimalService => _animalService.Value;
+        public IUserKeyService UserKeyService => _userKeyService.Value;
+        public IDutyService DutyService => _dutyService.Value;
+
 
     }
 }

@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 
 export const BackgroundWrapper = styled.div`
     .background {
+        size:cover;
+        position: center;
+        repeat:no-repeat
         width:100vw;
         height: 100vh;
-        position: relative;
         &.blur {
             filter: blur(4px)
         }
@@ -23,7 +25,8 @@ export const LoginWrapper = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
+        padding: 50px;
         .input-container {
             display: flex;
             justify-content: center;
@@ -32,7 +35,7 @@ export const LoginWrapper = styled.div`
            .header {
                 background-color: #A1C298;
                 color: #F3FDE8;
-                padding: 20px;
+                padding: 30px;
                 width: 300px;
                 margin-top: 20px;
                 border-radius: 10px 10px 0 0;
@@ -43,20 +46,20 @@ export const LoginWrapper = styled.div`
                 background-color: #C6EBC5;
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 30px;
                 width: 300px;
-                padding: 20px;
+                padding: 30px;
                 border-radius: 0 0 10px 10px;
                 .input-area {
                     display: flex;
                     align-items: center;
-                    gap: 15px;
+                    gap: 30px;
                     .input {
                         background-color: #F3FDE8;
                         border: none;
                         flex: 1;
                         border-radius: 7px;
-                        padding: 15px;
+                        padding: 25px;
                         color: #757575;
                     }
                 }
@@ -73,8 +76,9 @@ export const LoginWrapper = styled.div`
             }
             .button {
                 background-color: #A1C298;
-                padding: 15px;
+                padding: 20px;
                 font-weight: bold;
+                font-size: 20px;
             }
         }
     }

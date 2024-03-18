@@ -9,7 +9,9 @@ namespace DogaKahramanlari.Server.Services.Contracts
     public interface IServiceManager
     {
         IAnimalService AnimalService { get; }
+        IUserKeyService UserKeyService { get; }
 
+        IDutyService DutyService { get; }
         IAuthenticationService AuthenticationService { get; }
     }
 }

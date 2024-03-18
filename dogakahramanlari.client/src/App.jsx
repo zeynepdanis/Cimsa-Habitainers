@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import "./index.css";
+import Tasks from "./Pages/Tasks/Tasks";
 
 const App = () => {
   return (
@@ -18,6 +19,12 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="*" element={<div style={{
+            fontSize: '50px',
+            color: 'green',
+            fontWeight: 'bold'
+          }}>Sayfa Bulunamadi</div>} />
         </Routes>
       </BrowserRouter>
     </div>
