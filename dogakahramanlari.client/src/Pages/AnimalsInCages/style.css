@@ -6,10 +6,51 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  justify-content: center;
+justify-content: center;
   color: white;
   /* Bileşenin metin rengi */
 }
+
+#forest {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  height:90px;
+  padding: 10px 20px;
+  background-color: transparent;
+  background-image: url("/icon/forest.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999; /* Diğer öğelerin üzerine çıkması için */
+}
+
+#dashboard {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  width: 90px;
+  height:90px;
+  padding: 10px 20px;
+  background-color: transparent;
+  background-image: url("/icon/dashboard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999; /* Diğer öğelerin üzerine çıkması için */
+}
+
+
 
 .container {
   display: flex;
@@ -156,7 +197,27 @@ img.cage {
   /* Diğer elemanların üzerinde olması için z-index değeri */
   text-align: center;
 }
-
+/* Pop-up stilleri */
+.second-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  height: 60%;
+  background: #fffec4;
+  background-image: url("/icon/celebrate.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  /* Diğer elemanların üzerinde olması için z-index değeri */
+  text-align: center;
+}
 .popup-content {
   text-align: center;
   color: black;
