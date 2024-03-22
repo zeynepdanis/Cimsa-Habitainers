@@ -204,11 +204,31 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+<<<<<<<< Updated upstream:DogaKahramanlari.Server/Migrations/20240316150416_init.cs
 <<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240316150416_init.cs
                 values: new object[] { "52d76e38-a048-4ea9-a579-2a86364f3cc7", null, "Teacher", "TEACHER" });
 ========
                 values: new object[] { "ae07551e-4535-44b8-9c23-c586a4b98c2e", null, "Teacher", "TEACHER" });
 >>>>>>>> 4e2085b75996fbbbd46ad84178b405b46beb1d3b:DogaKahramanlari.Server/Migrations/20240316181911_init.cs
+========
+                values: new object[] { "09d55823-41ed-4ef0-b03a-618359f35df9", null, "Teacher", "TEACHER" });
+
+            migrationBuilder.InsertData(
+                table: "Duties",
+                columns: new[] { "Id", "Content", "DateStatus", "DutyStatus" },
+                values: new object[,]
+                {
+                    { 1, "Su tasarrufu yapmak: Dişlerimizi fırçalarken suyu kapatmayı unutmayalım. Bu sayede gereksiz yere su israfını önlemiş olacağız.", (byte)0, (byte)0 },
+                    { 2, "Geri dönüşüm yapmak: \"Bugün evdeki atık malzemeleri, plastik, kağıt, cam veya metal gibi kategorilere ayıralım. Böylelikle geri dönüşüme katkı sağlamış olacağız.", (byte)0, (byte)0 },
+                    { 3, "Enerji Tasarrufu yapmak: \"Herhangi bir odadan çıktığımızda ışıkları kapatmayı unutmayalım. Böylelikle elektrik tasarrufu yapmış olacağız.", (byte)0, (byte)0 },
+                    { 4, "Bitki sulamak: \"Bitkiler de bizim gibi canlı varlıklardır ve yaşamlarını sürdürmek için suya ihtiyaç duyarlar. Bugün onlara biraz sevgi ve su verelim.", (byte)0, (byte)0 },
+                    { 5, "Hayvanları beslemek: \"Hadi bugün sokak hayvanları için mama kabı ve su kabı hazırlayalım. Hazırladığımız kapları onların yaşam alanlarına yakın bir yere bırakalım.", (byte)0, (byte)0 },
+                    { 6, "Çöp toplamak: \"Bugün çevremizi temizleyelim! Yürürken karşılaştığımız etrafımızdaki çöpleri toplayıp çöp kutusuna atalım. Bu sayede hem doğayı hem de çevremizi temiz tutmuş olacağız.", (byte)0, (byte)0 },
+                    { 7, "Gıda israfını azaltmak: \"Bugünkü görevin, yemeklerini bitirebileceğin kadarını tabağına almak. Bu sayede kalan yemeklerin çöpe gitmesini engel olmuş olacağız.", (byte)0, (byte)0 },
+                    { 8, "Hayvan fotoğrafı çekmek: \"Bugün bir hayvan dostumuzun fotoğrafını çekelim. O hayvan hakkında bilgilendirici bilgileri öğrenip arkadaşlarımızla paylaşalım.", (byte)0, (byte)0 },
+                    { 9, "Ağaç dikmek: \"Hadi birlikte doğayı korumak için bir ağaç veya fidan dikelim. Daha sonra o fidanı sulayalım ve fidanın büyüyüp gelişmesini gözlemleyelim.", (byte)1, (byte)0 }
+                });
+>>>>>>>> Stashed changes:DogaKahramanlari.Server/Migrations/20240321171305_init.cs
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
