@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240326181553_naber")]
-    partial class naber
+    [Migration("20240326194115_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -375,18 +375,11 @@ namespace DogaKahramanlari.Server.Migrations
 
             modelBuilder.Entity("DogaKahramanlari.Server.Models.UserKey", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("NumberOfKeys")
                         .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -422,7 +415,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8dcd61f8-34b0-49d0-bb5a-c374bb96c013",
+                            Id = "7829ba16-6d65-42af-87d6-90b1328a33e6",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
