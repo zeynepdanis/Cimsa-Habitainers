@@ -233,10 +233,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240326094031_init.cs
-                values: new object[] { "dd2a51d9-48ee-4cbc-a27d-cf3732724edc", null, "Teacher", "TEACHER" });
-========
-                values: new object[] { "431470cf-91c2-40df-967b-9ef26ab96e01", null, "Teacher", "TEACHER" });
+                values: new object[] { "980ead7c-4ee8-4903-ac56-768d38ec868f", null, "Teacher", "TEACHER" });
 
             migrationBuilder.InsertData(
                 table: "Duties",
@@ -253,7 +250,6 @@ namespace DogaKahramanlari.Server.Migrations
                     { 8, "Hayvan fotoğrafı çekmek: \"Bugün bir hayvan dostumuzun fotoğrafını çekelim. O hayvan hakkında bilgilendirici bilgileri öğrenip arkadaşlarımızla paylaşalım.", (byte)0, (byte)0 },
                     { 9, "Ağaç dikmek: \"Hadi birlikte doğayı korumak için bir ağaç veya fidan dikelim. Daha sonra o fidanı sulayalım ve fidanın büyüyüp gelişmesini gözlemleyelim.", (byte)1, (byte)0 }
                 });
->>>>>>>> df9e6013034dae8166c6e832de42820108549165:DogaKahramanlari.Server/Migrations/20240318151948_init.cs
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

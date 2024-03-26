@@ -419,11 +419,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<< HEAD
-                            Id = "dd2a51d9-48ee-4cbc-a27d-cf3732724edc",
-=======
-                            Id = "431470cf-91c2-40df-967b-9ef26ab96e01",
->>>>>>> df9e6013034dae8166c6e832de42820108549165
+                            Id = "980ead7c-4ee8-4903-ac56-768d38ec868f",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
