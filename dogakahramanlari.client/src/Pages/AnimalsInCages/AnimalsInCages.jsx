@@ -3,20 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-const AnimalsInCages = () => {
 
-  const navigate = useNavigate(); 
+const AnimalsInCages = () => {
+  const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
-  const [isSecondPopupOpen, setSecondPopupOpen] = useState(false); // New state variable
-  const [keyNumber, setKeyNumber] = useState(10);
+  const [isSecondPopupOpen, setSecondPopupOpen] = useState(false);
+  const [keyNumber, setKeyNumber] = useState(null);
   const [insufficientKeys, setInsufficientKeys] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [animals, setAnimals] = useState([]);
   const [popupTitle, setPopupTitle] = useState("");
   const [popupContent, setPopupContent] = useState("");
   const animalsPerPage = 12;
-  // Başlık dizisi
   const titles = [
     "Bir Yeni Arkadaş Kazandın!",
     "Harika! Yepyeni Bir Macera Başlıyor!",
@@ -25,8 +24,6 @@ const AnimalsInCages = () => {
     "Süper Kahramanlık Gösterisi! İşte Yeni Dostun!",
     "Arkadaşlığın Başlangıcı: Bir Hayvan Daha Özgür!",
   ];
-
-  // İçerik dizisi
   const contents = [
     "Efsanevi! Yepyeni bir arkadaş kazandın! Haydi, onunla tanış, oyunlar oyna ve birlikte eğlenin. Arkadaşlık her zaman en güzel maceraları getirir!",
     "Muhteşem! Harika bir iş başardın! Şimdi sıra yeni dostunla eğlenmekte. Ona sevgi ve neşe getir, birlikte büyük bir maceraya atılın!",
@@ -37,18 +34,40 @@ const AnimalsInCages = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5120/api/animals")
-      .then((response) => response.json())
-      .then((data) => setAnimals(data))
-      .catch((error) => console.error("Error fetching animals:", error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5120/api/animals");
+        const data = await response.json();
+        setAnimals(data);
+      } catch (error) {
+        console.error("Error fetching animals:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchUserKeys = async () => {
+      try {
+        const response = await fetch("http://localhost:5120/api/userKeys");
+        const data = await response.json();
+        const numberOfKeys = data[0].numberOfKeys;
+        setKeyNumber(numberOfKeys);
+      } catch (error) {
+        console.error("API isteği başarısız oldu:", error);
+      }
+    };
+
+    fetchUserKeys();
   }, []);
 
   const indexOfLastAnimal = currentPage * animalsPerPage;
   const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
   const currentAnimals = animals.slice(indexOfFirstAnimal, indexOfLastAnimal);
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Popup açıldığında başlık ve içerik güncelleme fonksiyonu
   const updatePopupContent = () => {
     const randomIndex = Math.floor(Math.random() * titles.length);
     setPopupTitle(titles[randomIndex]);
@@ -72,12 +91,7 @@ const AnimalsInCages = () => {
   };
 
   const closeSecondPopup = () => {
-    // New function to close the second popup
     setSecondPopupOpen(false);
-  };
-
-  const updateKeys = (value) => {
-    setKeyNumber((prevKeyNumber) => Math.max(prevKeyNumber - value, 0));
   };
 
   const rescueAnimal = () => {
@@ -85,7 +99,7 @@ const AnimalsInCages = () => {
       animal.id === selectedAnimal.id ? { ...animal, status: 1 } : animal
     );
 
-    setAnimals(updatedAnimals); // Update the state with the updated status
+    setAnimals(updatedAnimals);
 
     fetch(`http://localhost:5120/api/animals/${selectedAnimal.id}`, {
       method: "PUT",
@@ -94,7 +108,7 @@ const AnimalsInCages = () => {
       },
       body: JSON.stringify({
         ...selectedAnimal,
-        status: 1, // Change the status to 1 when rescued
+        status: 1,
       }),
     })
       .then((response) => {
@@ -104,8 +118,6 @@ const AnimalsInCages = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Animal status updated successfully:", data);
-
         setSecondPopupOpen(true);
       })
       .catch((error) => {
@@ -114,7 +126,6 @@ const AnimalsInCages = () => {
 
     setPopupOpen(false);
 
-    //setSelectedAnimal(null);
     setKeyNumber((prevKeyNumber) =>
       Math.max(prevKeyNumber - selectedAnimal.value, 0)
     );
@@ -122,14 +133,13 @@ const AnimalsInCages = () => {
 
   return (
     <div>
-      <button id="forest" onClick={() => navigate("/forest")}>
-        
-        
-      </button>
+      <button id="forest" onClick={() => navigate("/forest")}></button>
       <button id="dashboard" onClick={() => navigate("/dashboard")}></button>
 
       <div className="header">
-        <h1>HAYVANLAR <h1>HAYVANLAR</h1></h1>
+        <h1>
+          HAYVANLAR <h1>HAYVANLAR</h1>
+        </h1>
       </div>
       <br></br>
       <br></br>
@@ -204,10 +214,10 @@ const AnimalsInCages = () => {
                 src={selectedAnimal.imagesStatus1}
                 alt={selectedAnimal.name}
               />
-              <p>
+              <p id="happyContent">
                 <em>{popupContent}</em>
               </p>
-              <p>{selectedAnimal.content}</p>
+              
               <button onClick={closeSecondPopup}>Close</button>
             </div>
           </div>

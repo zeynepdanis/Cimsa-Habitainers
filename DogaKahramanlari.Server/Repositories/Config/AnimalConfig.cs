@@ -16,7 +16,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                       new Animal()
                       {
                         Id = 1,
-                        Name="Monkey",
+                        Name="Maymun",
                         ImagesNormal= "/black-animals/black-monkey.png",
                         ImagesStatus1= "/animals/monkey.png",
                         Content = "Monkey İçeriği",
@@ -27,7 +27,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                       new Animal()                     
                       {
                         Id = 2,
-                        Name = "Lion",
+                        Name = "Aslan",
                         ImagesNormal = "/black-animals/black-lion.png",
                         ImagesStatus1 = "/animals/lion.png",
                         Content = "Lion İçeriği",
@@ -38,7 +38,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=3,
-                           Name = "Giraffe",
+                           Name = "Zürafa",
                            ImagesNormal = "/black-animals/black-giraffe.png",
                            ImagesStatus1 = "/animals/giraffe.png",
                            Content = "Giraffe İçeriği",
@@ -49,7 +49,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=4,
-                           Name = "Owl",
+                           Name = "Baykuş",
                            ImagesNormal = "/black-animals/black-owl.png",
                            ImagesStatus1 = "/animals/owl.png",
                            Content = "Owl İçeriği",
@@ -60,7 +60,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=5,
-                           Name = "Fox",
+                           Name = "Tilki",
                            ImagesNormal = "/black-animals/black-fox.png",
                            ImagesStatus1 = "/animals/fox.png",
                            Content = "Fox İçeriği",
@@ -71,7 +71,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=6,
-                           Name = "Beaver",
+                           Name = "Kunduz",
                            ImagesNormal = "/black-animals/black-beaver.png",
                            ImagesStatus1 = "/animals/beaver.png",
                            Content = "Beaver İçeriği",
@@ -82,7 +82,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=7,
-                           Name = "Rabbit",
+                           Name = "Tavşan",
                            ImagesNormal = "/black-animals/black-rabbit.png",
                            ImagesStatus1 = "/animals/rabbit.png",
                            Content = "Rabbit İçeriği",
@@ -93,7 +93,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id =8,
-                           Name = "Cat",
+                           Name = "Kedi",
                            ImagesNormal = "/black-animals/black-cat.png",
                            ImagesStatus1 = "/animals/cat.png",
                            Content = "Cat İçeriği",
@@ -104,7 +104,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id=9,
-                           Name = "Dog",
+                           Name = "Köpek",
                            ImagesNormal = "/black-animals/black-dog.png",
                            ImagesStatus1 = "/animals/dog.png",
                            Content = "Dog İçeriği",
@@ -126,7 +126,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id = 11,
-                           Name = "Reindeer",
+                           Name = "Geyik",
                            ImagesNormal = "/black-animals/black-reindeer.png",
                            ImagesStatus1 = "/animals/reindeer.png",
                            Content = "Reindeer İçeriği",
@@ -137,7 +137,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id = 12,
-                           Name = "Frog",
+                           Name = "Kurbağa",
                            ImagesNormal = "/black-animals/black-frog.png",
                            ImagesStatus1 = "/animals/frog.png",
                            Content = "Frog İçeriği",
@@ -148,7 +148,7 @@ namespace DogaKahramanlari.Server.Repositories.Config
                        new Animal()
                        {
                            Id = 13,
-                           Name = "Parrot",
+                           Name = "Papağan",
                            ImagesNormal = "/black-animals/black-parrot.png",
                            ImagesStatus1 = "/animals/parrot.png",
                            Content = "Parrot İçeriği",
