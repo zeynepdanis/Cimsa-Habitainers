@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class naber : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -215,25 +215,25 @@ namespace DogaKahramanlari.Server.Migrations
                 columns: new[] { "Id", "Content", "ImagesNormal", "ImagesStatus1", "Key", "Name", "Status", "Value" },
                 values: new object[,]
                 {
-                    { 1, "Monkey İçeriği", "/black-animals/black-monkey.png", "/animals/monkey.png", 1, "Monkey", 0, 2 },
-                    { 2, "Lion İçeriği", "/black-animals/black-lion.png", "/animals/lion.png", 2, "Lion", 0, 6 },
-                    { 3, "Giraffe İçeriği", "/black-animals/black-giraffe.png", "/animals/giraffe.png", 3, "Giraffe", 0, 7 },
-                    { 4, "Owl İçeriği", "/black-animals/black-owl.png", "/animals/owl.png", 4, "Owl", 0, 8 },
-                    { 5, "Fox İçeriği", "/black-animals/black-fox.png", "/animals/fox.png", 5, "Fox", 0, 2 },
-                    { 6, "Beaver İçeriği", "/black-animals/black-beaver.png", "/animals/beaver.png", 6, "Beaver", 0, 7 },
-                    { 7, "Rabbit İçeriği", "/black-animals/black-rabbit.png", "/animals/rabbit.png", 7, "Rabbit", 0, 3 },
-                    { 8, "Cat İçeriği", "/black-animals/black-cat.png", "/animals/cat.png", 8, "Cat", 0, 7 },
-                    { 9, "Dog İçeriği", "/black-animals/black-dog.png", "/animals/dog.png", 9, "Dog", 0, 5 },
-                    { 10, "Flamingo İçeriği", "/black-animals/black-flamingo.png", "/animals/flamingo.png", 10, "Flamingo", 0, 2 },
-                    { 11, "Reindeer İçeriği", "/black-animals/black-reindeer.png", "/animals/reindeer.png", 11, "Reindeer", 0, 6 },
-                    { 12, "Frog İçeriği", "/black-animals/black-frog.png", "/animals/frog.png", 12, "Frog", 0, 8 },
-                    { 13, "Parrot İçeriği", "/black-animals/black-parrot.png", "/animals/parrot.png", 13, "Parrot", 0, 3 }
+                    { 1, "Merhaba! Ben bir maymunum. Ormanların neşeli ve maceraperest sakinlerinden biriyim. Dal dal gezinir, ağaçlarda sallanır ve meyveleri toplarım. Akıllı ve oyunbaz bir hayvanım. Maymun olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Ormanlarımızın yok olması ve yaşam alanlarımızın azalması, hayatımızı zorlaştırıyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-monkey.png", "/animals/monkey.png", 1, "Monkey", 0, 2 },
+                    { 2, "Merhaba! Ben bir aslanım. Ben büyük ve güçlüyüm. Afrika'nın sıcak savanlarında yaşıyorum. Altın rengim ve muhteşem yelesim var. Kükreyişimle tanınırım ve avlarımı korurum. Ama maalesef çevre kirliliği bizi etkiliyor. Ormanlarımız yok ediliyor ve su kaynaklarımız kirleniyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-lion.png", "/animals/lion.png", 2, "Lion", 0, 6 },
+                    { 3, "Merhaba! Ben bir zürafaım. Uzun boyum ve uzun boynumla tanınıyorum. Afrika'nın sıcak savanlarında yaşarım. Yüksek ağaçlardaki yaprakları severim. Zürafa olmak harika! Ancak, maalesef çevre kirliliği bizi etkiliyor. Ormanlarımız yok ediliyor ve yaşam alanlarımız azalıyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-giraffe.png", "/animals/giraffe.png", 3, "Giraffe", 0, 7 },
+                    { 4, "Merhaba! Ben bir baykuşum. Geceleri uyanıkken diğer hayvanlar uyur. Sessizce uçarım ve hızla dönerim. En sevdiğim şey avlanmaktır. Baykuş olmak harika! Ancak, maalesef çevre kirliliği bizi etkiliyor. Hava kirliliği ve orman tahribatı bizim yaşamımızı zorlaştırıyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-owl.png", "/animals/owl.png", 4, "Owl", 0, 8 },
+                    { 5, "Merhaba! Ben bir tilkiyim. Hızlı ve çevik bir avcıyım. Gece avlanır, gündüz uyurum. Tilki olmak gerçekten heyecan verici! Ancak, insan etkinlikleri ve çevre kirliliği yaşam alanlarımızı tehdit ediyor. Ormanlarımız azalıyor ve doğal yaşamımızı sürdürebileceğimiz alanlar giderek daralıyor. Lütfen doğal yaşamı korumak için çaba gösterelim, böylece biz ve diğer orman sakinleri mutlu ve sağlıklı bir şekilde var olabiliriz. Teşekkürler!", "/black-animals/black-fox.png", "/animals/fox.png", 5, "Fox", 0, 2 },
+                    { 6, "Merhaba! Ben bir sincapım. Neşeli ve enerjik bir hayvanım. Ormanların uyanık ve hızlı koşucusuyum. Ağaçlarda zıplayıp yiyeceklerimi toplarım. Sincap olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Ormanların yok olması ve kentlerin büyümesi yaşam alanlarımızı tehdit ediyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-beaver.png", "/animals/beaver.png", 6, "Beaver", 0, 7 },
+                    { 7, "Merhaba! Ben bir tavşanım. Sevimli ve çevik bir hayvanım. Genellikle çimenlerde ve ormanlarda yaşarım. Büyük kulaklarım ve hızlı koşmamla tanınırım. Havada zıplayarak sevimli tavırlar sergilerim. Havuçları çok severim! Tavşan olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Ormanların yok olması ve tarım alanlarının genişlemesi, yaşam alanlarımızı tehdit ediyor. Lütfen doğal yaşam alanlarımızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-rabbit.png", "/animals/rabbit.png", 7, "Rabbit", 0, 3 },
+                    { 8, "Merhaba! Ben bir kediyim. Gizemli ve zarif bir hayvanım. Yumuşak tüylerim ve kuyruğumla tanınırım. Genellikle evlerde ve sokaklarda dolaşırım. Bağımsız ve meraklıyım. Yüksek yerlere tırmanmayı çok severim. Kedi olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Hava kirliliği ve kentsel gelişim, yaşam alanlarımızı daraltıyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-cat.png", "/animals/cat.png", 8, "Cat", 0, 7 },
+                    { 9, "Merhaba! Ben bir köpeğim. Sadık ve sevgi dolu bir arkadaşım. İnsanların en yakın dostlarından biriyim. Oyun oynamayı ve koşmayı çok severim. Sahibime koruyucu ve mutlu anlar yaşatırım. Köpek olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Kirlenmiş sular ve hava, sağlığımızı tehdit ediyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-dog.png", "/animals/dog.png", 9, "Dog", 0, 5 },
+                    { 10, "Merhaba! Ben bir flamingoyum. Zarif ve renkli bir su kuşuyum, sığ sularda dans ederim. Uzun bacaklarım ve eşsiz gagamla sularda avlanırım. sulak alanların yok olması ve kirlenmesi bizi çok olumsuz etkiliyor. Bu durum, besin zincirimizi ve yaşam alanlarımızı tehdit ediyor. Lütfen su kaynaklarını korumak için çaba gösterelim, böylece biz ve diğer su kuşları mutlu ve sağlıklı bir şekilde yaşayabiliriz.", "/black-animals/black-flamingo.png", "/animals/flamingo.png", 10, "Flamingo", 0, 2 },
+                    { 11, "Merhaba! Ben bir geyiğim. Zarif ve sessiz bir orman sakinim, ormanların incisiyim. Uzun boynum ve güzel boynuzlarım ile doğanın güzelliğini temsil ederim. Geyik olmak gerçekten büyüleyici! Ancak, ormansızlaşma ve avlanma baskısı yaşam alanlarımızı tehdit ediyor. Bu nedenle, doğal habitatlarımızı korumak ve avlanma faaliyetlerini sınırlamak çok önemlidir. Lütfen doğal yaşamı korumak için çaba gösterelim, böylece biz ve diğer orman dostları mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-reindeer.png", "/animals/reindeer.png", 11, "Reindeer", 0, 6 },
+                    { 12, "Merhaba! Ben bir kurbağayım. Geceleri nehirlerin, göllerin ve bataklıkların tadını çıkaran sevimli bir sakinim. Uzun ve yapışkan dilimle böcekleri yakalarım. Su altında yüzerken, şarkılarımı çalıp çırparken mutlu olurum. Kurbağa olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Su kaynaklarının kirlenmesi ve habitatlarımızın tahrip edilmesi, hayatımızı zorlaştırıyor. Lütfen doğamızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-frog.png", "/animals/frog.png", 12, "Frog", 0, 8 },
+                    { 13, "Merhaba! Ben bir papağanım. Renkli ve konuşkan bir kuşum. Genellikle tropikal ormanlarda ve evlerde yaşarım. Parlak tüylerim ve çeşitli seslerimle dikkat çekerim. İnsanların taklit ettiğim seslerini öğrenirim. Papağan olmak harika! Ancak, maalesef çevre kirliliği bizi de etkiliyor. Ormanların yok olması ve yasadışı avlanma, yaşam alanlarımızı tehdit ediyor. Lütfen doğal yaşam alanlarımızı koruyalım, böylece biz ve diğer hayvanlar mutlu ve sağlıklı bir şekilde yaşayabiliriz. Teşekkürler!", "/black-animals/black-parrot.png", "/animals/parrot.png", 13, "Parrot", 0, 3 }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "431470cf-91c2-40df-967b-9ef26ab96e01", null, "Teacher", "TEACHER" });
+                values: new object[] { "8dcd61f8-34b0-49d0-bb5a-c374bb96c013", null, "Teacher", "TEACHER" });
 
             migrationBuilder.InsertData(
                 table: "Duties",
