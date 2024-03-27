@@ -344,3 +344,13 @@ img.cage {
 .pagination button:hover {
   border: 1px solid #000;
 }
+
+#happyContent{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+  font-size: xx-large;
+}
