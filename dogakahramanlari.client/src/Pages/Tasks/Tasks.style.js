@@ -4,6 +4,7 @@ export const TasksWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
     .header {
         display: flex;
         justify-content: space-between;
@@ -11,7 +12,6 @@ export const TasksWrapper = styled.div`
         gap: 50px;
         .home-icon {
             background-color: transparent;
-            margin-top:50px;
         }
         .button-container {
             display: flex;
@@ -49,11 +49,17 @@ export const TasksWrapper = styled.div`
         .task-head {
             display: flex;
             justify-content: center;
-            border-bottom: 1px solid #000000;
             font-size: 28px;
             color: #1D647E;
             gap: 200px;
             padding: 30px;
+            border-bottom: 1px solid #000000;
+            .daily-task {
+                display: flex;
+                .task-header {
+                    
+                }
+            }
             .line {
                 position: absolute;
                 border-left: 1px solid #000000;

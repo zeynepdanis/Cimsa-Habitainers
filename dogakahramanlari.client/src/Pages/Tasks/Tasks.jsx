@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Tasks = () => {
   const navigate = useNavigate();  
 
-  const backDashboard = () => {
+  const handleDashboardClick = () => {
     const newPath = '/dashboard';
     navigate(newPath);
   };  
@@ -14,12 +14,9 @@ const Tasks = () => {
   return (
     <TasksWrapper>
         <div className='header'>
-            <button
-                onClick={backDashboard}
-                className='home-icon'
-            >
-                <HomeIcon />
-            </button>
+            <div className="home-icon" onClick={handleDashboardClick}>
+                <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
+            </div>
             <div className='button-container'>
                 <button
                     className='page-buttons'
