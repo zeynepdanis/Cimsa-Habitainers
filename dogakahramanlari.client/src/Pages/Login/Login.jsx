@@ -9,7 +9,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({
         username: '',
         password: ''
-    })
+    });
 
     const usernameHandler = (e) => {
         const usernameData = e.target.value;
