@@ -16,8 +16,14 @@ const Tasks = () => {
   };
 
   const openPopup = (task) => {
-    setPopupOpen(true);
-    setModalTask(task);
+    if(task.dutyStatus === 0) {
+        setPopupOpen(true);
+        setModalTask(task);
+    }
+    else {
+        setPopupOpen(false);
+    }
+
   }
   
   const closePopup = () => {
@@ -103,55 +109,64 @@ const Tasks = () => {
                 <div className='daily-task-container'>
                     <div>
                         {
-                            tasks.map((task) => (
-                               task.dateStatus === 0 
-                               ?
-                               <div onClick={() => openPopup(task)} className='task-row' key={task.id}>
-                                 <input 
-                                    type='checkbox' 
-                                    onChange={() => checkHandler(task)}
-                                    checked={task.dutyStatus === 1}
-                                />   
-                                 <div> {task.content} </div>
-                               </div>
-                               :
-                               null
-                            ))
+                        tasks.map((task) => (
+                            task.dateStatus === 0 
+                            ?
+                            <div 
+                                onClick={() => openPopup(task)} 
+                                className='task-row' 
+                                key={task.id}
+                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                            >
+                            <input 
+                                type='checkbox'
+                                checked={task.dutyStatus === 1}
+                            />   
+                            <div> {task.content} </div>
+                            </div>
+                            :
+                            null
+                        ))
                         }
                     </div>
                 </div>
                 <div className='weekly-task-container'>
                     <div>
                     {
-                            tasks.map((task) => (
-                               task.dateStatus === 1
-                               ?
-                               <div onClick={() => openPopup(task)} className='task-row' key={task.id}>
-                                 <input 
-                                    type='checkbox' 
-                                    onChange={() => checkHandler(task)}
-                                    checked={task.dutyStatus === 1}
-                                 />   
-                                 <div> {task.content} </div>
-                               </div>
-                               :
-                               null
-                            ))
+                    tasks.map((task) => (
+                        task.dateStatus === 1
+                        ?
+                        <div 
+                            onClick={() => openPopup(task)} 
+                            className='task-row' 
+                            key={task.id}
+                            style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                        >
+                        <input 
+                            type='checkbox'
+                            checked={task.dutyStatus === 1}
+                        />   
+                        <div> {task.content} </div>
+                        </div>
+                        :
+                        null
+                    ))
                     }
                     {
-                            isPopupOpen && modalTask && (
-                                <div className="modal">
-                                    <div className="popup-content">
-                                    <h2>{modalTask.name} </h2>
-                                    <p>{modalTask.content}</p>
-                                    <button style={{ backgroundColor: 'green', marginLeft: "5px" }} onClick={() => checkHandler(modalTask)}>
-                                        Tamamla
-                                    </button>
-                                    <button style={{ backgroundColor: 'red', marginLeft: "5px" }} onClick={closePopup}>
-                                        Kapat
-                                    </button>
-                                    </div>
-                                </div> )
+                    isPopupOpen && modalTask && (
+                        <div className="modal">
+                            <div className="popup-content">
+                            <h2>{modalTask.name} </h2>
+                            <p>{modalTask.content}</p>
+                            <button style={{ backgroundColor: 'green', marginLeft: "5px" }} onClick={() => checkHandler(modalTask)}>
+                                Tamamla
+                            </button>
+                            <button style={{ backgroundColor: 'red', marginLeft: "5px" }} onClick={closePopup}>
+                                Kapat
+                            </button>
+                            </div>
+                        </div> 
+                    )
                     }
                     </div>
                 </div>
