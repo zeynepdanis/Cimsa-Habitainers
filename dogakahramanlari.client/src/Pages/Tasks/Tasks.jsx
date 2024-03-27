@@ -109,7 +109,8 @@ const Tasks = () => {
                 <div className='daily-task-container'>
                     <div>
                         {
-                        tasks.map((task) => (
+                        tasks.sort((a,b) => (a.dutyStatus - b.dutyStatus))
+                        .map((task) => (
                             task.dateStatus === 0 
                             ?
                             <div 
@@ -133,24 +134,26 @@ const Tasks = () => {
                 <div className='weekly-task-container'>
                     <div>
                     {
-                    tasks.map((task) => (
-                        task.dateStatus === 1
-                        ?
-                        <div 
-                            onClick={() => openPopup(task)} 
-                            className='task-row' 
-                            key={task.id}
-                            style={task.dutyStatus === 1 ? {color:'gray'} : null}
-                        >
-                        <input 
-                            type='checkbox'
-                            checked={task.dutyStatus === 1}
-                        />   
-                        <div> {task.content} </div>
-                        </div>
-                        :
-                        null
-                    ))
+                    tasks
+                        .sort((a,b) => (a.dutyStatus - b.dutyStatus))
+                        .map((task) => (
+                            task.dateStatus === 1
+                            ?
+                            <div 
+                                onClick={() => openPopup(task)} 
+                                className='task-row' 
+                                key={task.id}
+                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                            >
+                            <input 
+                                type='checkbox'
+                                checked={task.dutyStatus === 1}
+                            />   
+                            <div> {task.content} </div>
+                            </div>
+                            :
+                            null
+                        ))
                     }
                     {
                     isPopupOpen && modalTask && (
