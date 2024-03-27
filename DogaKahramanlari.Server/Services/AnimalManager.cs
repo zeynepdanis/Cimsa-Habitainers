@@ -38,20 +38,6 @@ namespace DogaKahramanlari.Server.Services
             return animal;
         }
 
-        /* public async Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges)
-        {
-            // check entity
-            var entity = await _manager.AnimalRepository.GetOneAnimalByIdAsync(id, trackChanges);
-
-            if (entity is null)
-                throw new ArgumentException("Animal not found.", nameof(id));
-
-            entity = _mapper.Map<Animal>(animalDtoForUpdate);
-
-            _manager.AnimalRepository.Update(entity);
-            await _manager.SaveAsync();
-        } */
-
         public async Task UpdateOneAnimalAsync(int id, AnimalDtoForUpdate animalDtoForUpdate, bool trackChanges)
         {
             // check entity
