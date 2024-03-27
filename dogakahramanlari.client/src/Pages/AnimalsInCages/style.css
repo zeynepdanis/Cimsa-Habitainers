@@ -254,7 +254,10 @@ img.cage {
   background-color: #B2EA70;
   /* Hover rengi */
 }
-
+.popup-content  #close:hover {
+  background-color: red;
+  /* Hover rengi */
+}
 .insufficient-keys {
   background-color: #ff9999;
   /* Kırmızı arka plan rengi */
@@ -354,3 +357,4 @@ img.cage {
   margin-top: 80px;
   font-size: xx-large;
 }
+
