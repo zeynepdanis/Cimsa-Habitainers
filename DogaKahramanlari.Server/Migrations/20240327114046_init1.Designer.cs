@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240326194115_init")]
-    partial class init
+    [Migration("20240327114046_init1")]
+    partial class init1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,7 +70,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-monkey.png",
                             ImagesStatus1 = "/animals/monkey.png",
                             Key = 1,
-                            Name = "Monkey",
+                            Name = "Maymun",
                             Status = 0,
                             Value = 2
                         },
@@ -81,7 +81,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-lion.png",
                             ImagesStatus1 = "/animals/lion.png",
                             Key = 2,
-                            Name = "Lion",
+                            Name = "Aslan",
                             Status = 0,
                             Value = 6
                         },
@@ -92,7 +92,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-giraffe.png",
                             ImagesStatus1 = "/animals/giraffe.png",
                             Key = 3,
-                            Name = "Giraffe",
+                            Name = "Zürafa",
                             Status = 0,
                             Value = 7
                         },
@@ -103,7 +103,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-owl.png",
                             ImagesStatus1 = "/animals/owl.png",
                             Key = 4,
-                            Name = "Owl",
+                            Name = "Baykuş",
                             Status = 0,
                             Value = 8
                         },
@@ -114,7 +114,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-fox.png",
                             ImagesStatus1 = "/animals/fox.png",
                             Key = 5,
-                            Name = "Fox",
+                            Name = "Tilki",
                             Status = 0,
                             Value = 2
                         },
@@ -125,7 +125,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-beaver.png",
                             ImagesStatus1 = "/animals/beaver.png",
                             Key = 6,
-                            Name = "Beaver",
+                            Name = "Kunduz",
                             Status = 0,
                             Value = 7
                         },
@@ -136,7 +136,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-rabbit.png",
                             ImagesStatus1 = "/animals/rabbit.png",
                             Key = 7,
-                            Name = "Rabbit",
+                            Name = "Tavşan",
                             Status = 0,
                             Value = 3
                         },
@@ -147,7 +147,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-cat.png",
                             ImagesStatus1 = "/animals/cat.png",
                             Key = 8,
-                            Name = "Cat",
+                            Name = "Kedi",
                             Status = 0,
                             Value = 7
                         },
@@ -158,7 +158,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-dog.png",
                             ImagesStatus1 = "/animals/dog.png",
                             Key = 9,
-                            Name = "Dog",
+                            Name = "Köpek",
                             Status = 0,
                             Value = 5
                         },
@@ -180,7 +180,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-reindeer.png",
                             ImagesStatus1 = "/animals/reindeer.png",
                             Key = 11,
-                            Name = "Reindeer",
+                            Name = "Geyik",
                             Status = 0,
                             Value = 6
                         },
@@ -191,7 +191,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-frog.png",
                             ImagesStatus1 = "/animals/frog.png",
                             Key = 12,
-                            Name = "Frog",
+                            Name = "Kurbağa",
                             Status = 0,
                             Value = 8
                         },
@@ -202,7 +202,7 @@ namespace DogaKahramanlari.Server.Migrations
                             ImagesNormal = "/black-animals/black-parrot.png",
                             ImagesStatus1 = "/animals/parrot.png",
                             Key = 13,
-                            Name = "Parrot",
+                            Name = "Papağan",
                             Status = 0,
                             Value = 3
                         });
@@ -378,7 +378,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("NumberOfKeys")
+                    b.Property<int?>("NumberOfKeys")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -415,7 +415,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7829ba16-6d65-42af-87d6-90b1328a33e6",
+                            Id = "e97143ec-70c3-4c47-8572-362a9cf22509",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
