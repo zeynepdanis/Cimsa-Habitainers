@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240330075939_init.Designer.cs
-    [Migration("20240330075939_init")]
-    partial class init
-========
-    [Migration("20240330115425_beyza")]
-    partial class beyza
->>>>>>>> 370fef985e2fb6f98af8dc1caedd3fd108cdd974:DogaKahramanlari.Server/Migrations/20240330115425_beyza.Designer.cs
+    [Migration("20240330133229_damla")]
+    partial class damla
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -427,11 +422,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240330075939_init.Designer.cs
-                            Id = "5d57c9ac-d94f-47c1-8957-c950c093e6a5",
-========
-                            Id = "b148b5e6-50d5-4802-8c86-629e57613007",
->>>>>>>> 370fef985e2fb6f98af8dc1caedd3fd108cdd974:DogaKahramanlari.Server/Migrations/20240330115425_beyza.Designer.cs
+                            Id = "5697e0e8-8031-48bb-9700-540ef0f3b743",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
