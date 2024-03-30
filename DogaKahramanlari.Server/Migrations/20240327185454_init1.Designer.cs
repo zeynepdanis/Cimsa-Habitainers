@@ -4,6 +4,7 @@ using DogaKahramanlari.Server.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,16 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogaKahramanlari.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240318151948_init.Designer.cs
+    [Migration("20240318151948_init")]
+    partial class init
+========
+    [Migration("20240327185454_init1")]
+    partial class init1
+>>>>>>>> working:DogaKahramanlari.Server/Migrations/20240327185454_init1.Designer.cs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -418,8 +426,12 @@ namespace DogaKahramanlari.Server.Migrations
 
                     b.HasData(
                         new
-        
+                        {
+<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240318151948_init.Designer.cs
+                            Id = "431470cf-91c2-40df-967b-9ef26ab96e01",
+========
                             Id = "adb5cf8b-8d93-4c23-8192-f488be4b9f53",
+>>>>>>>> working:DogaKahramanlari.Server/Migrations/20240327185454_init1.Designer.cs
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });
