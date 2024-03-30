@@ -46,6 +46,17 @@ const Tasks = () => {
     }
   };
 
+  const updateKeyNumber = async() => {
+    const updatedKey = {id: userId , numberOfKeys: keyNumber};
+            const keyRes = await fetch(`http://localhost:5120/api/userKeys/${userId}` , {
+                method: 'PUT',
+                headers: { 
+                    'Content-type': 'application/json'
+                }, 
+                body: JSON.stringify(updatedKey)
+            })
+  };
+
   const checkHandler = async (task) => {
         const newDutyStatus = task.dutyStatus === 0 ? 1 : 0;
         const updatedTask = { ...task, dutyStatus: newDutyStatus };
@@ -59,14 +70,7 @@ const Tasks = () => {
           });
           if(response.status >= 200 && response.status <= 299) {
             setTasks(prevTasks => prevTasks.map(prevTask => prevTask.id === updatedTask.id ? updatedTask : prevTask));
-            const updatedKey = {...keyNumber , keyNumber: 3};
-            const keyRes = await fetch(`http://localhost:5120/api/userKeys/${userId}` , {
-                method: 'PUT',
-                headers: { 
-                    'Content-type': 'application/json'
-                }, 
-                body: JSON.stringify(updatedKey)
-            })
+            updateKeyNumber();
           } else {
             alert('Gorev tamamlama yapilamadi.')
           }
