@@ -26,16 +26,7 @@ namespace DogaKahramanlari.Server.Repositories
             modelBuilder.ApplyConfiguration(new DutyConfig());
 
 
-            //modelBuilder.Entity<UserKey>().HasKey(u => u.UserId);
-
-            modelBuilder.Entity<UserKey>(entity =>
-            {
-                entity.Property(u => u.Id)
-                    .ValueGeneratedNever(); // Otomatik artışı devre dışı bırak
-
-                entity.Property(u => u.Id)
-                    .IsRequired(); // Zorunlu alan olarak belirle
-            });
+            modelBuilder.Entity<UserKey>().HasKey(u => u.Id);
 
 
         }

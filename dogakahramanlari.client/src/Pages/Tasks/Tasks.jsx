@@ -1,7 +1,8 @@
+import { HomeIcon, KeyIcon } from '../../assets/svg/icons';
 import { TasksWrapper } from './Tasks.style';
 import keyImage from '../../assets/pngs/key.png'
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Tasks = () => {
   const navigate = useNavigate();  
@@ -12,7 +13,7 @@ const Tasks = () => {
   const userId = localStorage.getItem('userId');
   //   const [isChecked, setIsChecked] = useState(false);
 
-  const handleDashboardClick = () => {
+  const backDashboard = () => {
     const newPath = '/dashboard';
     navigate(newPath);
   };
@@ -111,9 +112,12 @@ const Tasks = () => {
   return (
     <TasksWrapper>
         <div className='header'>
-            <div className="home-icon" onClick={handleDashboardClick}>
-                <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
-            </div>
+            <button
+                onClick={backDashboard}
+                className='home-icon'
+            >
+                <HomeIcon />
+            </button>
             <div className='button-container'>
                 <button
                     className='page-buttons'
@@ -147,75 +151,6 @@ const Tasks = () => {
                 <div>
                     <span>Haftalık Görevler</span>
                 </div>  
-            </div>
-            <div className='task-part'>
-                <div className='daily-task-container'>
-                    <div>
-                        {
-                        tasks.sort((a,b) => (a.dutyStatus - b.dutyStatus))
-                        .map((task) => (
-                            task.dateStatus === 0 
-                            ?
-                            <div 
-                                onClick={() => openPopup(task)} 
-                                className='task-row' 
-                                key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
-                            >
-                            <input 
-                                type='checkbox'
-                                checked={task.dutyStatus === 1}
-                            />   
-                            <div> {task.content} </div>
-                            </div>
-                            :
-                            null
-                        ))
-                        }
-                    </div>
-                </div>
-                <div className='weekly-task-container'>
-                    <div>
-                    {
-                    tasks
-                        .sort((a,b) => (a.dutyStatus - b.dutyStatus))
-                        .map((task) => (
-                            task.dateStatus === 1
-                            ?
-                            <div 
-                                onClick={() => openPopup(task)} 
-                                className='task-row' 
-                                key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
-                            >
-                            <input 
-                                type='checkbox'
-                                checked={task.dutyStatus === 1}
-                            />   
-                            <div> {task.content} </div>
-                            </div>
-                            :
-                            null
-                        ))
-                    }
-                    {
-                    isPopupOpen && modalTask && (
-                        <div className="modal">
-                            <div className="popup-content">
-                            <h2>{modalTask.name} </h2>
-                            <p>{modalTask.content}</p>
-                            <button style={{ backgroundColor: 'green', marginLeft: "5px" }} onClick={() => checkHandler(modalTask)}>
-                                Tamamla
-                            </button>
-                            <button style={{ backgroundColor: 'red', marginLeft: "5px" }} onClick={closePopup}>
-                                Kapat
-                            </button>
-                            </div>
-                        </div> 
-                    )
-                    }
-                    </div>
-                </div>
             </div>
         </div>
     </TasksWrapper>
