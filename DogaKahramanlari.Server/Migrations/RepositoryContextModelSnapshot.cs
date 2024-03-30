@@ -375,7 +375,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("NumberOfKeys")
+                    b.Property<int?>("NumberOfKeys")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -412,7 +412,7 @@ namespace DogaKahramanlari.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7829ba16-6d65-42af-87d6-90b1328a33e6",
+                            Id = "63d50c61-523f-444f-a17d-30e3bdf0984b",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         });

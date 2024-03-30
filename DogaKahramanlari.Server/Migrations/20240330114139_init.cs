@@ -95,7 +95,7 @@ namespace DogaKahramanlari.Server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NumberOfKeys = table.Column<int>(type: "int", nullable: false)
+                    NumberOfKeys = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -231,7 +231,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "7829ba16-6d65-42af-87d6-90b1328a33e6", null, "Teacher", "TEACHER" });
+                values: new object[] { "63d50c61-523f-444f-a17d-30e3bdf0984b", null, "Teacher", "TEACHER" });
 
             migrationBuilder.InsertData(
                 table: "Duties",
