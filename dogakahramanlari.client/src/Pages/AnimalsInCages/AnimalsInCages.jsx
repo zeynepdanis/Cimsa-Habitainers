@@ -1,15 +1,15 @@
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState, useEffect } from "react";
-import "./style.css";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const AnimalsInCages = () => {
   const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isSecondPopupOpen, setSecondPopupOpen] = useState(false);
-  const [keyNumber, setKeyNumber] = useState(null);
+  const [keyNumber, setKeyNumber] = useState(20);
   const [insufficientKeys, setInsufficientKeys] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [animals, setAnimals] = useState([]);
@@ -217,7 +217,7 @@ const AnimalsInCages = () => {
               <p id="happyContent">
                 <em>{popupContent}</em>
               </p>
-              
+
               <button onClick={closeSecondPopup}>Close</button>
             </div>
           </div>
