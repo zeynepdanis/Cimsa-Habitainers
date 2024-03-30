@@ -9,7 +9,7 @@ const AnimalsInCages = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isSecondPopupOpen, setSecondPopupOpen] = useState(false);
-  const [keyNumber, setKeyNumber] = useState(null);
+  const [keyNumber, setKeyNumber] = useState(20);
   const [insufficientKeys, setInsufficientKeys] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [animals, setAnimals] = useState([]);

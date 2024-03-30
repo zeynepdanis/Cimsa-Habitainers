@@ -8,7 +8,9 @@ const Tasks = () => {
   const [tasks, setTasks] = useState([]);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [modalTask, setModalTask] = useState(null)
-//   const [isChecked, setIsChecked] = useState(false);
+  const [keyNumber, setKeyNumber] = useState(0);
+  const userId = localStorage.getItem('userId');
+  //   const [isChecked, setIsChecked] = useState(false);
 
   const handleDashboardClick = () => {
     const newPath = '/dashboard';
@@ -30,6 +32,20 @@ const Tasks = () => {
     setPopupOpen(false);
   };
 
+  const getKeyNumber = async () => {
+    try {
+      const response = await fetch(`http://localhost:5120/api/userKeys/${userId}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      console.log(data.numberOfKeys);
+      setKeyNumber(data.numberOfKeys);
+    } catch (error) {
+        console.error('Veri alınırken hata oluştu:', error);
+    }
+  };
+
   const checkHandler = async (task) => {
         const newDutyStatus = task.dutyStatus === 0 ? 1 : 0;
         const updatedTask = { ...task, dutyStatus: newDutyStatus };
@@ -43,6 +59,7 @@ const Tasks = () => {
           });
           if(response.status >= 200 && response.status <= 299) {
             setTasks(prevTasks => prevTasks.map(prevTask => prevTask.id === updatedTask.id ? updatedTask : prevTask));
+            updateKeyNumber();
           } else {
             alert('Gorev tamamlama yapilamadi.')
           }
@@ -50,6 +67,28 @@ const Tasks = () => {
        } catch (error) {
             console.log(error)
        }
+  };
+
+  const updateKeyNumber = async () => {
+    const updateKey = {id: userId , numberOfKeys: keyNumber};
+    try {
+        const keyRes = await fetch(`http://localhost:5120/api/userKeys/${userId}`, {
+            method: 'PUT',
+            headers: { 
+                'Content-type': 'application/json'
+            }, 
+            body: JSON.stringify(updateKey) 
+        })
+        if(keyRes.status >= 200 && keyRes.status <= 299) {
+            const newKeyNumber = keyNumber + 3;
+            setKeyNumber(newKeyNumber);
+        }else {
+            alert('Anahtar sayisi guncellenemedi.')
+          }
+    } catch (error) {
+        console.log(error);
+    }
+
   };
 
   useEffect(() => {
@@ -65,6 +104,8 @@ const Tasks = () => {
       }
     };
     getTasks();
+    getKeyNumber();
+    console.log(keyNumber,'keynumbe')
   },[]);
 
   return (
@@ -81,17 +122,19 @@ const Tasks = () => {
                 </button>
                 <button
                     className='page-buttons'
+                    onClick={() => navigate('/cages')}
                 >
                     Hayvanlar
                 </button>
                 <button
                     className='page-buttons'
+                    onClick={() => navigate('/forest')}
                 >
                     Orman
                 </button>
             </div>
             <div className='key-number'>
-                <span>1</span> 
+                <span>{keyNumber}</span> 
                 <img className='key-image' src={keyImage} alt='keyImage'/>
             </div>
         </div>
