@@ -8,11 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DogaKahramanlari.Server.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240330141734_damla.cs
     public partial class damla : Migration
-========
-    public partial class init11 : Migration
->>>>>>>> b66d071e3429e3a18e2f7429acc371b280b87313:DogaKahramanlari.Server/Migrations/20240330144420_init11.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -237,11 +233,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-<<<<<<<< HEAD:DogaKahramanlari.Server/Migrations/20240330141734_damla.cs
-                values: new object[] { "94bfc4f6-da66-4a8e-a81f-2e687382b264", null, "Teacher", "TEACHER" });
-========
-                values: new object[] { "4d9b74f8-ca3a-47e1-bac8-225b1bf452a0", null, "Teacher", "TEACHER" });
->>>>>>>> b66d071e3429e3a18e2f7429acc371b280b87313:DogaKahramanlari.Server/Migrations/20240330144420_init11.cs
+                values: new object[] { "a2f951fa-d03c-4d33-9b6a-038ab5026408", null, "Teacher", "TEACHER" });
 
             migrationBuilder.InsertData(
                 table: "Duties",
