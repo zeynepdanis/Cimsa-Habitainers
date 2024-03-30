@@ -19,9 +19,7 @@ const Forest = () => {
             .then(response => response.json())
             .then(data => {
                 const updatedAnimals = data.map(animal => ({
-                    ...animal,
-                    imagesNormal: `/black-animals/black-${animal.name.toLowerCase()}.png`,
-                    imagesStatus1: `/animals/${animal.name.toLowerCase()}.png`
+                    ...animal
                 }));
                 setAnimals(updatedAnimals);
             })
