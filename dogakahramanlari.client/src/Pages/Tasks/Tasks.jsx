@@ -8,7 +8,7 @@ const Tasks = () => {
   const [tasks, setTasks] = useState([]);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [modalTask, setModalTask] = useState(null)
-  const [keyNumber, setKeyNumber] = useState();
+  const [keyNumber, setKeyNumber] = useState(0);
   const userId = localStorage.getItem('userId');
 //   const [isChecked, setIsChecked] = useState(false);
 
@@ -46,15 +46,25 @@ const Tasks = () => {
     }
   };
 
-  const updateKeyNumber = async() => {
-    const updatedKey = {id: userId , numberOfKeys: keyNumber};
-            const keyRes = await fetch(`http://localhost:5120/api/userKeys/${userId}` , {
+  const updateKeyNumber = async(task) => {
+    const updatedKey = {id: userId , numberOfKeys: keyNumber + (task.dateStatus === 0 ? 5 : 20)};
+            console.log(task, 'task');
+            console.log(updatedKey, 'up');
+            try {
+                const keyRes = await fetch(`http://localhost:5120/api/userKeys/${userId}` , {
                 method: 'PUT',
                 headers: { 
                     'Content-type': 'application/json'
                 }, 
                 body: JSON.stringify(updatedKey)
-            })
+                })
+                if (keyRes.status >= 200 && keyRes.status <= 299) {
+                    // setKeyNumber(keyNumber + 5);
+                    getKeyNumber();
+                }
+            } catch (error) {
+                console.log(error);
+            }
   };
 
   const checkHandler = async (task) => {
@@ -70,7 +80,7 @@ const Tasks = () => {
           });
           if(response.status >= 200 && response.status <= 299) {
             setTasks(prevTasks => prevTasks.map(prevTask => prevTask.id === updatedTask.id ? updatedTask : prevTask));
-            updateKeyNumber();
+            updateKeyNumber(task);
           } else {
             alert('Gorev tamamlama yapilamadi.')
           }
