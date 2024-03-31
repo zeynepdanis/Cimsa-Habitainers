@@ -5,7 +5,14 @@ import { DashboardWrapper } from "./Dashboard.style";
 const Dashboard = () => {
     const navigate = useNavigate();
 
+    const handleDashboardClick = () => {
+        navigate('/dashboard');
+    };
+
+
+
     return (
+
         <DashboardWrapper>
             <div className="dashboard">
                 <div className="dashboard-header">
@@ -33,24 +40,37 @@ const Dashboard = () => {
                         </div>
                     </p>
                 </div>
+
+
+
                 <div className="button-container">
                     <button
                         onClick={() => navigate('/tasks')}
                         className="dashboard-button"
                     >
                         Görevler
+                        <div className="taskpage">
+                            <img className="dashboard-image" src="icon/task.png" alt="taskpage" />
+                        </div>
                     </button>
                     <button
                         onClick={() => navigate('/cages')}
                         className="dashboard-button"
                     >
                         Hayvanlar
+                        <div className="cagepage" >
+                            <img className="dashboard-image" src="icon/cage.png" alt="cagepage" />
+                        </div>
+
                     </button>
                     <button
                         onClick={() => navigate('/forest')}
                         className="dashboard-button"
                     >
                         Orman
+                        <div className="forestpage">
+                            <img className="dashboard-image" src="icon/forest.png" alt="forestpage" />
+                        </div>
                     </button>
                 </div>
             </div>

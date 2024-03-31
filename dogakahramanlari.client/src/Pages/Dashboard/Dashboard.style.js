@@ -44,8 +44,9 @@ export const DashboardWrapper = styled.div`
                 right: -160px;
                 top: 320px;
             }
-           
         }
+
+
 
         .white{
             color: rgba(48, 92, 4, 0.94);
@@ -67,9 +68,9 @@ export const DashboardWrapper = styled.div`
             justify-content: center;
             gap: 100px;
             .dashboard-button {
-                width: 200px;
+                width: 220px;
                 border-radius: 50%;
-                padding: 30px 40px;
+                padding: 22px 40px 80px;
                 background-color: #7F5539;
                 font-weight: bold;
                 font-size: 26px;
@@ -80,7 +81,44 @@ export const DashboardWrapper = styled.div`
                 background-color: rgb(127, 85, 57, 0.8);
                 color: black;
             }
-         
+
+            .homepageicon{
+                position: absolute;
+                margin: 0px;
+                left: 190px;
+                padding: 0px;
+            }
+            
+            .taskpage {
+                position: absolute;
+                margin: 0px;
+                left: 190px;
+                padding: 0px;
+            }
+
+            .cagepage {
+                position: absolute;
+                margin: 0px;
+                left: 505px;
+            }
+            
+            .forestpage {
+                position: absolute;
+                margin: 0px;
+                left: 825px;
+            }
+            
+            .dashboard-image {
+                width: 50px;
+                background: none;
+                
+            }
+            
+            .dashboard-image {
+                cursor: pointer;
+            }
+
+
         }
     }
 

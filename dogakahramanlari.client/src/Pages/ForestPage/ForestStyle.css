@@ -14,9 +14,21 @@
     position: absolute;
 }
 
+.taskpage {
+    position: absolute;
+    left: 100px;
+}
+
+.cagepage {
+    position: absolute;
+    left: 200px;
+}
+
+
 .dashboard-image {
-    width: 100px;
+    width: 80px;
     background: none;
+    margin: 10px 10px;
 }
 
 .dashboard-image {

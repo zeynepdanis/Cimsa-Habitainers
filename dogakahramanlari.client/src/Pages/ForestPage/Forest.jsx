@@ -10,8 +10,17 @@ const Forest = () => {
     const navigate = useNavigate();
 
     const handleDashboardClick = () => {
-        navigate('/dashboard'); // 'login' rotasına yönlendirme yapar
+        navigate('/dashboard');
     };
+
+    const handleTaskPageClick = () => {
+        navigate('/tasks');
+    };
+
+    const handleCagePageClick = () => {
+        navigate('/cages');
+    };
+
 
 
     useEffect(() => {
@@ -31,6 +40,15 @@ const Forest = () => {
         <>
             <div className="homepage" onClick={handleDashboardClick}>
                 <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
+
+            </div>
+
+            <div className="taskpage" onClick={handleTaskPageClick}>
+                <img className="dashboard-image" src="icon/task.png" alt="taskpage" />
+            </div>
+
+            <div className="cagepage" onClick={handleCagePageClick}>
+                <img className="dashboard-image" src="icon/cage.png" alt="cagepage" />
             </div>
 
             <div className="forest-wrapper">
