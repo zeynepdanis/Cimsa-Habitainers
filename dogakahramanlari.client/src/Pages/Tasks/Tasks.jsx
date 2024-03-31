@@ -120,11 +120,13 @@ const Tasks = () => {
                 </button>
                 <button
                     className='page-buttons'
+                    onClick={() => navigate('/cages')}
                 >
                     Hayvanlar
                 </button>
                 <button
                     className='page-buttons'
+                    onClick={() => navigate('/forest')}
                 >
                     Orman
                 </button>
