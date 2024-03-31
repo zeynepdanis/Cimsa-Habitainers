@@ -231,7 +231,7 @@ namespace DogaKahramanlari.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "7142d8a3-ec02-457e-a7a7-ce8ff0fc8f76", null, "Teacher", "TEACHER" });
+                values: new object[] { "15f7ec80-d12e-4b00-8415-8dab0b8f0950", null, "Teacher", "TEACHER" });
 
             migrationBuilder.InsertData(
                 table: "Duties",
