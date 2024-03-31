@@ -1,20 +1,22 @@
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const AnimalsInCages = () => {
   const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isSecondPopupOpen, setSecondPopupOpen] = useState(false);
-  const [keyNumber, setKeyNumber] = useState(20);
+  const [keyNumber, setKeyNumber] = useState(null);
   const [insufficientKeys, setInsufficientKeys] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [animals, setAnimals] = useState([]);
   const [popupTitle, setPopupTitle] = useState("");
   const [popupContent, setPopupContent] = useState("");
+  const [userId, setUserId] = useState(localStorage.getItem('userId'));
+
   const animalsPerPage = 12;
   const titles = [
     "Bir Yeni Arkadaş Kazandın!",
@@ -33,6 +35,8 @@ const AnimalsInCages = () => {
     "Muhteşem bir başarı! Bir hayvan daha özgürlüğüne kavuştu ve arkadaşlık başladı! Ona sevgiyle bakmayı unutma, birlikte muhteşem maceralara atılacağız!",
   ];
 
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,21 +50,28 @@ const AnimalsInCages = () => {
 
     fetchData();
   }, []);
+ 
+
+  const GetKeyNumber = async () => {
+    try {
+      const response = await fetch(`http://localhost:5120/api/userKeys/${userId}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      console.log(data.numberOfKeys);
+      setKeyNumber(data.numberOfKeys);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchUserKeys = async () => {
-      try {
-        const response = await fetch("http://localhost:5120/api/userKeys");
-        const data = await response.json();
-        const numberOfKeys = data[0].numberOfKeys;
-        setKeyNumber(numberOfKeys);
-      } catch (error) {
-        console.error("API isteği başarısız oldu:", error);
-      }
-    };
-
-    fetchUserKeys();
+    // Anahtar sayısını güncelleme
+    GetKeyNumber();
   }, []);
+
+
 
   const indexOfLastAnimal = currentPage * animalsPerPage;
   const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
@@ -94,7 +105,7 @@ const AnimalsInCages = () => {
     setSecondPopupOpen(false);
   };
 
-  const rescueAnimal = () => {
+  const rescueAnimal = async () => {
     const updatedAnimals = animals.map((animal) =>
       animal.id === selectedAnimal.id ? { ...animal, status: 1 } : animal
     );
@@ -126,9 +137,36 @@ const AnimalsInCages = () => {
 
     setPopupOpen(false);
 
-    setKeyNumber((prevKeyNumber) =>
-      Math.max(prevKeyNumber - selectedAnimal.value, 0)
-    );
+    
+    try {
+
+      
+     
+      const url = `http://localhost:5120/api/userKeys/${userId}`;
+      const newData = {
+        id: userId,
+        numberOfKeys: keyNumber - selectedAnimal.value
+        
+      };
+      console.log(keyNumber);
+      const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newData)
+      });
+      if (response.ok) {
+        console.log('User keys updated successfully.');
+      } else {
+        console.error('Failed to update user keys.');
+      }
+    } catch (error) {
+      console.error('Error updating user keys:', error);
+    }
+   
+    GetKeyNumber();
+   
   };
 
   return (
@@ -199,7 +237,7 @@ const AnimalsInCages = () => {
               <button style={{ marginLeft: "5px" }} onClick={rescueAnimal}>
                 Kurtar
               </button>
-              <button style={{ marginLeft: "5px" }} onClick={closePopup}>
+              <button id="close" style={{ marginLeft: "5px" }} onClick={closePopup}>
                 Kapat
               </button>
             </div>
@@ -217,8 +255,8 @@ const AnimalsInCages = () => {
               <p id="happyContent">
                 <em>{popupContent}</em>
               </p>
-
-              <button onClick={closeSecondPopup}>Close</button>
+              
+              <button id="close" onClick={closeSecondPopup}>Kapat</button>
             </div>
           </div>
         )}
