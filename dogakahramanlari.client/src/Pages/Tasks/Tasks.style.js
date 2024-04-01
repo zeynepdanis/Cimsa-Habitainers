@@ -70,21 +70,25 @@ export const TasksWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
+
+    .home-icon {
+        background-color: transparent;
+        position: absolute;
+        left: 20px;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 50px;
-        .home-icon {
-            background-color: transparent;
-        }
         .button-container {
             display: flex;
             gap: 50px;
             .page-buttons {
                 background-color: rgb(255, 254, 196);
                 color: black;
-                width: 300px;
+                width: 280px;
                 height: 100px;
                 border-radius: 45%;
                 font-size: 25px;
@@ -94,7 +98,7 @@ export const TasksWrapper = styled.div`
             .page-buttons:hover {
                 background-color: rgb(255, 254, 196, 0.8);
                 color: black;
-                width: 300px;
+                width: 280px;
                 height: 100px;
                 border-radius: 45%;
                 font-size: 25px;
@@ -108,7 +112,7 @@ export const TasksWrapper = styled.div`
             display: flex;
             align-items: center;
             border-radius: 10px;
-            padding: 15px;
+            padding: 5px 15px;
             font-size: 28px;
             font-weight: bold;
             gap: 15px;
@@ -119,7 +123,7 @@ export const TasksWrapper = styled.div`
     }
     .task-body {
         background-color: #FFFEC4;
-        width: 950px;
+        width: 1200px;
         border-radius: 15px;
         height: 650px;
         font-weight: bold;
@@ -130,7 +134,7 @@ export const TasksWrapper = styled.div`
             justify-content: center;
             font-size: 28px;
             color: #1D647E;
-            gap: 250px;
+            gap: 400px;
             padding: 30px;
             border-bottom: 1px solid #000000;
             .daily-task {
@@ -150,8 +154,8 @@ export const TasksWrapper = styled.div`
             justify-content: center;
             font-size: 20px;
             color: #1D4A7E;
-            width: 900px;
-            padding: 10px;
+            width: 1100px;
+            padding: 10px 90px;
             font-weight: 400;
             font-style: italic;
             .daily-task-container {
@@ -165,7 +169,7 @@ export const TasksWrapper = styled.div`
                     background-color: rgb(178, 233, 112, 0.5);
                     border: solid 1px black;
                     border-radius: 20px;
-                    margin: 20px 30px 20px 30px;
+                    margin: 20px 110px 20px 0px;
                 }
             }
             .weekly-task-container {
@@ -179,7 +183,7 @@ export const TasksWrapper = styled.div`
                     background-color: rgb(178, 233, 112, 0.5);
                     border: solid 1px black;
                     border-radius: 20px;
-                    margin: 20px 30px 20px 30px;
+                    margin: 20px 60px 20px 45px;
                 }
                 .modal {
                     position: fixed;

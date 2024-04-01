@@ -14,7 +14,7 @@ body {
 #forest {
   position: fixed;
   top: 20px;
-  right: 20px;
+  left: 180px;
   width: 70px;
   height: 70px;
   padding: 10px 20px;
@@ -51,8 +51,6 @@ body {
   /* Diğer öğelerin üzerine çıkması için */
 }
 
-
-
 #dashboard {
   position: absolute;
   top: 20px;
@@ -73,6 +71,28 @@ body {
   z-index: 9999;
   /* Diğer öğelerin üzerine çıkması için */
 }
+
+#logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  width: 70px;
+  height: 70px;
+  padding: 10px 20px;
+  background-color: transparent;
+  background-image: url("/icon/logout.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
+  /* Diğer öğelerin üzerine çıkması için */
+}
+
 
 
 
@@ -105,15 +125,18 @@ body {
   margin-right: 30px;
   text-align: center;
   height: 75px;
+
 }
 
 #text h1 {
   color: #000;
   font-family: Inter;
-  font-size: 35px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 1000;
   line-height: normal;
+
+
 }
 
 #key {
@@ -121,7 +144,7 @@ body {
   background: #B2EA70;
   height: 50px;
   width: 120px;
-  margin-top: -10px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
 }

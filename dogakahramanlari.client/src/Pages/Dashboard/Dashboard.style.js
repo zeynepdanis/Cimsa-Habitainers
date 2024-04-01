@@ -3,6 +3,20 @@ import styled from '@emotion/styled';
 export const DashboardWrapper = styled.div`
     background-image: url("../../assets/jpgs/forest_background_transparency.jpg");
     padding: 40px;
+
+    .logout1{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .homepage1{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+
     .dashboard {
         position: absolute;
         top: 50%;

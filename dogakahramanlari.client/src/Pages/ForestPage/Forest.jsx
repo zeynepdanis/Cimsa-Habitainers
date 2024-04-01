@@ -21,6 +21,10 @@ const Forest = () => {
         navigate('/cages');
     };
 
+    const handleclickLogOut = () => {
+        navigate('/');
+    };
+
 
 
     useEffect(() => {
@@ -40,7 +44,6 @@ const Forest = () => {
         <>
             <div className="homepage" onClick={handleDashboardClick}>
                 <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
-
             </div>
 
             <div className="taskpage" onClick={handleTaskPageClick}>
@@ -49,6 +52,10 @@ const Forest = () => {
 
             <div className="cagepage" onClick={handleCagePageClick}>
                 <img className="dashboard-image" src="icon/cage.png" alt="cagepage" />
+            </div>
+
+            <div className="logout" onClick={handleclickLogOut}>
+                <img className="dashboard-image" src="icon/logout.png" alt="cagepage" />
             </div>
 
             <div className="forest-wrapper">

@@ -18,6 +18,12 @@ const Tasks = () => {
         navigate(newPath);
     };
 
+    const handleclickLogOut = () => {
+        navigate('/');
+    };
+
+
+
     const openPopup = (task) => {
         if (task.dutyStatus === 0) {
             setPopupOpen(true);
@@ -108,10 +114,19 @@ const Tasks = () => {
 
     return (
         <TasksWrapper>
+            <div className="home-icon" onClick={handleDashboardClick}>
+                <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
+            </div>
             <div className='header'>
-                <div className="home-icon" onClick={handleDashboardClick}>
-                    <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
+
+                <div className="a">
+
                 </div>
+
+                <div className="logout" onClick={handleclickLogOut}>
+                    <img className="dashboard-image" src="icon/logout.png" alt="cagepage" />
+                </div>
+
                 <div className='button-container'>
                     <button
                         className='page-buttons'
@@ -163,7 +178,7 @@ const Tasks = () => {
                                                     backgroundColor: 'rgb(105, 113, 152, 0.2)',
                                                     border: 'solid 1px black',
                                                     borderRadius: '20px',
-                                                    margin: '20px 30px'
+                                                    margin: '20px 110px 20px 0px'
                                                 } : null}
                                             >
                                                 <input
@@ -196,7 +211,7 @@ const Tasks = () => {
                                                     backgroundColor: 'rgb(105, 113, 152, 0.2)',
                                                     border: 'solid 1px black',
                                                     borderRadius: '20px',
-                                                    margin: '20px 0px 20px 60px'
+                                                    margin: '20px 60px 20px 45px'
                                                 } : null}
                                             >
                                                 <input

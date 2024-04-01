@@ -9,11 +9,22 @@ const Dashboard = () => {
         navigate('/dashboard');
     };
 
+    const handleclickLogOut = () => {
+        navigate('/');
+    };
 
 
     return (
 
         <DashboardWrapper>
+            <div className="homepage1" onClick={handleDashboardClick}>
+                <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
+            </div>
+
+
+            <div className="logout1" onClick={handleclickLogOut}>
+                <img className="dashboard-image" src="icon/logout.png" alt="cagepage" />
+            </div>
             <div className="dashboard">
                 <div className="dashboard-header">
                     <h1 className="white">DOĞA KAHRAMANLARI</h1>
@@ -44,6 +55,9 @@ const Dashboard = () => {
 
 
                 <div className="button-container">
+
+
+
                     <button
                         onClick={() => navigate('/tasks')}
                         className="dashboard-button"

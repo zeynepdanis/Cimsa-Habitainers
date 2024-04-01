@@ -173,9 +173,9 @@ const AnimalsInCages = () => {
     <div>
 
       <button id="task" onClick={() => navigate("/tasks")}></button>
-
       <button id="forest" onClick={() => navigate("/forest")}></button>
       <button id="dashboard" onClick={() => navigate("/dashboard")}></button>
+      <button id="logout" onClick={() => navigate("/")}></button>
 
       <div className="header">
         <h1>

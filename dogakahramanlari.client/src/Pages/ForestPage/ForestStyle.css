@@ -16,17 +16,22 @@
 
 .taskpage {
     position: absolute;
-    left: 100px;
+    left: 80px;
 }
 
 .cagepage {
     position: absolute;
-    left: 200px;
+    left: 160px;
+}
+
+.logout {
+    position: absolute;
+    right: 0px;
 }
 
 
 .dashboard-image {
-    width: 80px;
+    width: 65px;
     background: none;
     margin: 10px 10px;
 }
