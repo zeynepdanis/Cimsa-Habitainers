@@ -1,8 +1,8 @@
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useEffect } from "react";
-import "./style.css";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const AnimalsInCages = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const AnimalsInCages = () => {
     "Muhteşem bir başarı! Bir hayvan daha özgürlüğüne kavuştu ve arkadaşlık başladı! Ona sevgiyle bakmayı unutma, birlikte muhteşem maceralara atılacağız!",
   ];
 
-  
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +50,7 @@ const AnimalsInCages = () => {
 
     fetchData();
   }, []);
- 
+
 
   const GetKeyNumber = async () => {
     try {
@@ -137,16 +137,16 @@ const AnimalsInCages = () => {
 
     setPopupOpen(false);
 
-    
+
     try {
 
-      
-     
+
+
       const url = `http://localhost:5120/api/userKeys/${userId}`;
       const newData = {
         id: userId,
         numberOfKeys: keyNumber - selectedAnimal.value
-        
+
       };
       console.log(keyNumber);
       const response = await fetch(url, {
@@ -164,13 +164,16 @@ const AnimalsInCages = () => {
     } catch (error) {
       console.error('Error updating user keys:', error);
     }
-   
+
     GetKeyNumber();
-   
+
   };
 
   return (
     <div>
+
+      <button id="task" onClick={() => navigate("/tasks")}></button>
+
       <button id="forest" onClick={() => navigate("/forest")}></button>
       <button id="dashboard" onClick={() => navigate("/dashboard")}></button>
 
@@ -255,7 +258,7 @@ const AnimalsInCages = () => {
               <p id="happyContent">
                 <em>{popupContent}</em>
               </p>
-              
+
               <button id="close" onClick={closeSecondPopup}>Kapat</button>
             </div>
           </div>

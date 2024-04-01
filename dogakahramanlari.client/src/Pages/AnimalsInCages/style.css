@@ -6,7 +6,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-justify-content: center;
+  justify-content: center;
   color: white;
   /* Bileşenin metin rengi */
 }
@@ -15,8 +15,8 @@ justify-content: center;
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 90px;
-  height:90px;
+  width: 70px;
+  height: 70px;
   padding: 10px 20px;
   background-color: transparent;
   background-image: url("/icon/forest.png");
@@ -27,16 +27,39 @@ justify-content: center;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 9999; /* Diğer öğelerin üzerine çıkması için */
+  z-index: 9999;
+  /* Diğer öğelerin üzerine çıkması için */
 }
+
+#task {
+  position: fixed;
+  top: 20px;
+  left: 100px;
+  width: 70px;
+  height: 70px;
+  padding: 10px 20px;
+  background-color: transparent;
+  background-image: url("/icon/task.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
+  /* Diğer öğelerin üzerine çıkması için */
+}
+
+
 
 #dashboard {
   position: absolute;
   top: 20px;
   left: 20px;
   font-size: 18px;
-  width: 90px;
-  height:90px;
+  width: 70px;
+  height: 70px;
   padding: 10px 20px;
   background-color: transparent;
   background-image: url("/icon/dashboard.png");
@@ -47,7 +70,8 @@ justify-content: center;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 9999; /* Diğer öğelerin üzerine çıkması için */
+  z-index: 9999;
+  /* Diğer öğelerin üzerine çıkması için */
 }
 
 
@@ -197,6 +221,7 @@ img.cage {
   /* Diğer elemanların üzerinde olması için z-index değeri */
   text-align: center;
 }
+
 /* Pop-up stilleri */
 .second-popup {
   position: fixed;
@@ -218,6 +243,7 @@ img.cage {
   /* Diğer elemanların üzerinde olması için z-index değeri */
   text-align: center;
 }
+
 .popup-content {
   text-align: center;
   color: black;
@@ -254,10 +280,12 @@ img.cage {
   background-color: #B2EA70;
   /* Hover rengi */
 }
-.popup-content  #close:hover {
+
+.popup-content #close:hover {
   background-color: red;
   /* Hover rengi */
 }
+
 .insufficient-keys {
   background-color: #ff9999;
   /* Kırmızı arka plan rengi */
@@ -295,7 +323,7 @@ img.cage {
 
 .header h1 {
   position: absolute;
- 
+
   color: #ffffff;
   text-align: center;
   font-family: "Seymour One", sans-serif;
@@ -309,10 +337,10 @@ img.cage {
   margin-left: -10px;
 }
 
-.header h1 h1{
- 
+.header h1 h1 {
+
   top: 0;
-  
+
   color: #1D647E;
   text-align: center;
   font-family: "Seymour One", sans-serif;
@@ -348,7 +376,7 @@ img.cage {
   border: 1px solid #000;
 }
 
-#happyContent{
+#happyContent {
 
   display: flex;
   justify-content: center;
@@ -357,4 +385,3 @@ img.cage {
   margin-top: 80px;
   font-size: xx-large;
 }
-
