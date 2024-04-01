@@ -19,16 +19,13 @@ const Tasks = () => {
   };
 
   const openPopup = (task) => {
-    // if(task.dutyStatus === 0) {
-    //     setPopupOpen(true);
-    //     setModalTask(task);
-    // }
-    // else {
-    //     setPopupOpen(false);
-    // }
-    setPopupOpen(true);
-    setModalTask(task);
-
+    if(task.dutyStatus === 0) {
+        setPopupOpen(true);
+        setModalTask(task);
+    }
+    else {
+        setPopupOpen(false);
+    }
   }
   
   const closePopup = () => {
