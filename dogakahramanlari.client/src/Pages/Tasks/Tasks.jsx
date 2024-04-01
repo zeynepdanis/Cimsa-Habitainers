@@ -158,11 +158,12 @@ const Tasks = () => {
                                 onClick={() => openPopup(task)} 
                                 className='task-row' 
                                 key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                                style={task.dutyStatus === 1 ? {color:'#42b883'} : null}
                             >
                             <input 
                                 type='checkbox'
                                 checked={task.dutyStatus === 1}
+                                disabled
                             />   
                             <div> {task.content} </div>
                             </div>
@@ -184,11 +185,12 @@ const Tasks = () => {
                                 onClick={() => openPopup(task)} 
                                 className='task-row' 
                                 key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                                style={task.dutyStatus === 1 ? {color:'#42b883'} : null}
                             >
                             <input 
                                 type='checkbox'
                                 checked={task.dutyStatus === 1}
+                                disabled
                             />   
                             <div> {task.content} </div>
                             </div>
