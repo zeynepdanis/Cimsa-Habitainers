@@ -2,6 +2,7 @@ import { TasksWrapper } from './Tasks.style';
 import keyImage from '../../assets/pngs/key.png'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { KeyIcon } from '../../assets/svg/icons';
 
 const Tasks = () => {
   const navigate = useNavigate();  
@@ -18,13 +19,15 @@ const Tasks = () => {
   };
 
   const openPopup = (task) => {
-    if(task.dutyStatus === 0) {
-        setPopupOpen(true);
-        setModalTask(task);
-    }
-    else {
-        setPopupOpen(false);
-    }
+    // if(task.dutyStatus === 0) {
+    //     setPopupOpen(true);
+    //     setModalTask(task);
+    // }
+    // else {
+    //     setPopupOpen(false);
+    // }
+    setPopupOpen(true);
+    setModalTask(task);
 
   }
   
@@ -204,6 +207,22 @@ const Tasks = () => {
                             <div className="popup-content">
                             <h2>{modalTask.name} </h2>
                             <p>{modalTask.content}</p>
+                            {modalTask.dateStatus === 0 
+                            ?
+                            <div className='key-number-container'>
+                                <div className='inner-container'>
+                                    <div className='key-number-inModal'>5 Anahtar</div>
+                                    <KeyIcon width={50}/>
+                                </div>
+                            </div>
+                            :
+                            <div className='key-number-container'>
+                                <div className='inner-container'>
+                                    <div className='key-number-inModal'>20 Anahtar</div>
+                                    <KeyIcon width={50}/>
+                                </div>
+                            </div>
+                            }
                             <button style={{ backgroundColor: 'green', marginLeft: "5px" }} onClick={() => checkHandler(modalTask)}>
                                 Tamamla
                             </button>

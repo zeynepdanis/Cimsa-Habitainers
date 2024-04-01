@@ -166,7 +166,7 @@ export const TasksWrapper = styled.div`
                     transform: translate(-50%, -50%);
                     padding: 20px;
                     width:500px;
-                    height: 300px;
+                    height: 350px;
                     background: #fffec4;
                     border-radius: 8px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -175,6 +175,26 @@ export const TasksWrapper = styled.div`
                     display: flex;
                     flex: column;
                     justify-content: center;
+                    .key-number-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 20px;
+                        .inner-container {
+                            background-color: #B2EA70;
+                            border-radius: 20px;
+                            height: 70px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0 20px;
+                            .key-number-inModal {
+                                font-weight: bold;
+                                display: flex;
+                                align-items: center;
+                             }
+                        }
+                    }
                 }
             }
         }
