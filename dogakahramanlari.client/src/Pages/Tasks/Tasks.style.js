@@ -82,14 +82,26 @@ export const TasksWrapper = styled.div`
             display: flex;
             gap: 50px;
             .page-buttons {
-                background-color: #FFFEC4;
-                color: #1D647E;
+                background-color: rgb(255, 254, 196);
+                color: black;
                 width: 300px;
                 height: 100px;
                 border-radius: 45%;
-                font-size: 30px;
+                font-size: 25px;
                 font-weight: bold;
             }
+
+            .page-buttons:hover {
+                background-color: rgb(255, 254, 196, 0.8);
+                color: black;
+                width: 300px;
+                height: 100px;
+                border-radius: 45%;
+                font-size: 25px;
+                font-weight: bold;
+                font-style: italic;
+            }
+
         }
         .key-number {
             background-color: #B2EA70;
@@ -107,7 +119,7 @@ export const TasksWrapper = styled.div`
     }
     .task-body {
         background-color: #FFFEC4;
-        width: 900px;
+        width: 950px;
         border-radius: 15px;
         height: 650px;
         font-weight: bold;
@@ -118,7 +130,7 @@ export const TasksWrapper = styled.div`
             justify-content: center;
             font-size: 28px;
             color: #1D647E;
-            gap: 200px;
+            gap: 250px;
             padding: 30px;
             border-bottom: 1px solid #000000;
             .daily-task {
@@ -130,7 +142,7 @@ export const TasksWrapper = styled.div`
             .line {
                 position: absolute;
                 border-left: 1px solid #000000;
-                height: 450px;
+                height: 550px;
             }
         }
         .task-part {
@@ -149,6 +161,11 @@ export const TasksWrapper = styled.div`
                     align-items: start;
                     gap: 10px;
                     padding: 15px;
+                    color: green;
+                    background-color: rgb(178, 233, 112, 0.5);
+                    border: solid 1px black;
+                    border-radius: 20px;
+                    margin: 20px 30px 20px 30px;
                 }
             }
             .weekly-task-container {
@@ -158,6 +175,11 @@ export const TasksWrapper = styled.div`
                     align-items: start;
                     gap: 10px;
                     padding: 15px;
+                    color: green;
+                    background-color: rgb(178, 233, 112, 0.5);
+                    border: solid 1px black;
+                    border-radius: 20px;
+                    margin: 20px 30px 20px 30px;
                 }
                 .modal {
                     position: fixed;

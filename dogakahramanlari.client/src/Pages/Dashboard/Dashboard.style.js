@@ -74,12 +74,13 @@ export const DashboardWrapper = styled.div`
                 background-color: #7F5539;
                 font-weight: bold;
                 font-size: 26px;
-                font-style: italic;
+                
             }
 
             .dashboard-button:hover{
                 background-color: rgb(127, 85, 57, 0.8);
                 color: black;
+                font-style: italic;
             }
 
             .homepageicon{
