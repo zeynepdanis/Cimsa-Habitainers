@@ -2,6 +2,7 @@ import { TasksWrapper } from './Tasks.style';
 import keyImage from '../../assets/pngs/key.png'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { KeyIcon } from '../../assets/svg/icons';
 
 const Tasks = () => {
   const navigate = useNavigate();  
@@ -25,7 +26,6 @@ const Tasks = () => {
     else {
         setPopupOpen(false);
     }
-
   }
   
   const closePopup = () => {
@@ -158,11 +158,12 @@ const Tasks = () => {
                                 onClick={() => openPopup(task)} 
                                 className='task-row' 
                                 key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                                style={task.dutyStatus === 1 ? {color:'#42b883'} : null}
                             >
                             <input 
                                 type='checkbox'
                                 checked={task.dutyStatus === 1}
+                                disabled
                             />   
                             <div> {task.content} </div>
                             </div>
@@ -184,11 +185,12 @@ const Tasks = () => {
                                 onClick={() => openPopup(task)} 
                                 className='task-row' 
                                 key={task.id}
-                                style={task.dutyStatus === 1 ? {color:'gray'} : null}
+                                style={task.dutyStatus === 1 ? {color:'#42b883'} : null}
                             >
                             <input 
                                 type='checkbox'
                                 checked={task.dutyStatus === 1}
+                                disabled
                             />   
                             <div> {task.content} </div>
                             </div>
@@ -202,6 +204,22 @@ const Tasks = () => {
                             <div className="popup-content">
                             <h2>{modalTask.name} </h2>
                             <p>{modalTask.content}</p>
+                            {modalTask.dateStatus === 0 
+                            ?
+                            <div className='key-number-container'>
+                                <div className='inner-container'>
+                                    <div className='key-number-inModal'>5 Anahtar</div>
+                                    <KeyIcon width={50}/>
+                                </div>
+                            </div>
+                            :
+                            <div className='key-number-container'>
+                                <div className='inner-container'>
+                                    <div className='key-number-inModal'>20 Anahtar</div>
+                                    <KeyIcon width={50}/>
+                                </div>
+                            </div>
+                            }
                             <button style={{ backgroundColor: 'green', marginLeft: "5px" }} onClick={() => checkHandler(modalTask)}>
                                 Tamamla
                             </button>
