@@ -4,7 +4,7 @@ export const BackgroundWrapper = styled.div`
     .background {
         size:cover;
         position: center;
-        repeat:no-repeat
+        repeat:no-repeat;
         width:100vw;
         height: 100vh;
         &.blur {

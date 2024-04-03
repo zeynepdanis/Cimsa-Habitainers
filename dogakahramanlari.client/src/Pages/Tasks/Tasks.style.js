@@ -70,13 +70,11 @@ export const TasksWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
     .home-icon {
         background-color: transparent;
         position: absolute;
         left: 20px;
     }
-
     .header {
         display: flex;
         justify-content: space-between;
@@ -94,7 +92,6 @@ export const TasksWrapper = styled.div`
                 font-size: 25px;
                 font-weight: bold;
             }
-
             .page-buttons:hover {
                 background-color: rgb(255, 254, 196, 0.8);
                 color: black;
@@ -105,7 +102,6 @@ export const TasksWrapper = styled.div`
                 font-weight: bold;
                 font-style: italic;
             }
-
         }
         .key-number {
             background-color: #B2EA70;
@@ -139,9 +135,6 @@ export const TasksWrapper = styled.div`
             border-bottom: 1px solid #000000;
             .daily-task {
                 display: flex;
-                .task-header {
-                    
-                }
             }
             .line {
                 position: absolute;

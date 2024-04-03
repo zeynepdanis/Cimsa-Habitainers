@@ -13,15 +13,11 @@ const Dashboard = () => {
         navigate('/');
     };
 
-
     return (
-
         <DashboardWrapper>
             <div className="homepage1" onClick={handleDashboardClick}>
                 <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
             </div>
-
-
             <div className="logout1" onClick={handleclickLogOut}>
                 <img className="dashboard-image" src="icon/logout.png" alt="cagepage" />
             </div>
@@ -31,16 +27,14 @@ const Dashboard = () => {
                     <h1>DOĞA KAHRAMANLARI</h1>
                 </div>
                 <div className="dashboard-container">
-                    <p><p> <b>
+                    <p><p> 
+                    <b>
                         MERHABA DOĞA KAHRAMANLARI,
                     </b>
                     </p>
-
                         <div className="yazı">
                             Ormanda yaşayan sevimli hayvan dostlarımızı kilitli kaldıkları kafeslerinden kurtarmak için siz doğa kahramanlarına ihtiyacımız var.
-
                             Hayvanları kurtarmak için <b>Görevler Sayfası</b>’ ndaki görevleri tamamlayarak anahtar kazanabilir, kazandığınız anahtarla birlikte <b>Hayvanlar Sayfası</b>' ndaki hayvanları kilitli oldukları kafeslerinden kurtarabilirsiniz.
-
                             <br />
                             <br />
                             Siz de bu hayvanları kurtarıp doğa kahramanı olmak istiyorsanız  Haydi, birlikte hayvanların kurtuluşu için adım atalım!
@@ -51,13 +45,7 @@ const Dashboard = () => {
                         </div>
                     </p>
                 </div>
-
-
-
                 <div className="button-container">
-
-
-
                     <button
                         onClick={() => navigate('/tasks')}
                         className="dashboard-button"
@@ -75,7 +63,6 @@ const Dashboard = () => {
                         <div className="cagepage" >
                             <img className="dashboard-image" src="icon/cage.png" alt="cagepage" />
                         </div>
-
                     </button>
                     <button
                         onClick={() => navigate('/forest')}
