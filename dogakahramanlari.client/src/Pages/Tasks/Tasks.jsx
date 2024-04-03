@@ -11,7 +11,6 @@ const Tasks = () => {
     const [modalTask, setModalTask] = useState(null)
     const [keyNumber, setKeyNumber] = useState(0);
     const userId = localStorage.getItem('userId');
-    //   const [isChecked, setIsChecked] = useState(false);
 
     const handleDashboardClick = () => {
         const newPath = '/dashboard';
@@ -21,9 +20,7 @@ const Tasks = () => {
     const handleclickLogOut = () => {
         navigate('/');
     };
-
-
-
+    
     const openPopup = (task) => {
         if (task.dutyStatus === 0) {
             setPopupOpen(true);
@@ -65,7 +62,6 @@ const Tasks = () => {
                 body: JSON.stringify(updatedKey)
             })
             if (keyRes.status >= 200 && keyRes.status <= 299) {
-                // setKeyNumber(keyNumber + 5);
                 getKeyNumber();
             }
         } catch (error) {
@@ -118,15 +114,9 @@ const Tasks = () => {
                 <img className="dashboard-image" src="icon/dashboard.png" alt="mainpage" />
             </div>
             <div className='header'>
-
-                <div className="a">
-
-                </div>
-
                 <div className="logout" onClick={handleclickLogOut}>
                     <img className="dashboard-image" src="icon/logout.png" alt="cagepage" />
                 </div>
-
                 <div className='button-container'>
                     <button
                         className='page-buttons'
