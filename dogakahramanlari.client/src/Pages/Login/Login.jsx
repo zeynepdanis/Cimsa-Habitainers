@@ -9,7 +9,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({
         username: '',
         password: ''
-    });
+    })
 
     const usernameHandler = (e) => {
         const usernameData = e.target.value;
@@ -36,11 +36,13 @@ const Login = () => {
                 },
                 body: JSON.stringify({ username: loginData.username, password: loginData.password })
             });
+          
             if (200 <= loginRequest.status && loginRequest.status <= 299) {
                 const content = await loginRequest.json();
                 console.log(content)
                 window.localStorage.setItem('token', content.accessToken);
                 window.localStorage.setItem('userId', content.userId);
+
                 navigate('/dashboard')
             } else {
                 alert('Giriş Yapılamadı')
@@ -50,7 +52,6 @@ const Login = () => {
             alert('Giriş Yapılamadı');
         }
     };
-
 
     return (
         <LoginWrapper>
