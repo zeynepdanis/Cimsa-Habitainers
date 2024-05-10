@@ -13,7 +13,6 @@ const Forest = () => {
         navigate('/dashboard'); // 'login' rotasına yönlendirme yapar
     };
 
-
     useEffect(() => {
         fetch("http://localhost:5120/api/animals")
             .then(response => response.json())
