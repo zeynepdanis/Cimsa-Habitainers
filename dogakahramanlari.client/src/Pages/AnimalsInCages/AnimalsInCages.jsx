@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const AnimalsInCages = () => {
-  const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isSecondPopupOpen, setSecondPopupOpen] = useState(false);
@@ -76,19 +75,11 @@ const AnimalsInCages = () => {
   const indexOfLastAnimal = currentPage * animalsPerPage;
   const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
   const currentAnimals = animals.slice(indexOfFirstAnimal, indexOfLastAnimal);
-
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  const updatePopupContent = () => {
-    const randomIndex = Math.floor(Math.random() * titles.length);
-    setPopupTitle(titles[randomIndex]);
-    setPopupContent(contents[randomIndex]);
-  };
 
   const openPopup = (animal) => {
     setSelectedAnimal(animal);
     if (keyNumber >= animal.value) {
-      updatePopupContent();
       setPopupOpen(true);
     } else {
       setInsufficientKeys(true);
@@ -101,40 +92,42 @@ const AnimalsInCages = () => {
     setPopupOpen(false);
   };
 
-  const closeSecondPopup = () => {
-    setSecondPopupOpen(false);
+  const updateKeys = (value) => {
+    setKeyNumber((prevKeyNumber) => Math.max(prevKeyNumber - value, 0));
   };
 
   const rescueAnimal = async () => {
     const updatedAnimals = animals.map((animal) =>
       animal.id === selectedAnimal.id ? { ...animal, status: 1 } : animal
     );
-
-    setAnimals(updatedAnimals);
-
+  
+    setAnimals(updatedAnimals); // Update the state with the updated status
+  
     fetch(`http://localhost:5120/api/animals/${selectedAnimal.id}`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         ...selectedAnimal,
-        status: 1,
-      }),
+        status: 1 // Change the status to 1 when rescued
+      })
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to update animal status");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setSecondPopupOpen(true);
-      })
-      .catch((error) => {
-        console.error("Error updating animal status:", error);
-      });
-
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to update animal status');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Animal status updated successfully:', data);
+      // Reload the page to reflect the changes
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error updating animal status:', error);
+    });
+  
     setPopupOpen(false);
 
 
@@ -167,6 +160,7 @@ const AnimalsInCages = () => {
 
     GetKeyNumber();
 
+
   };
 
   return (
@@ -177,13 +171,15 @@ const AnimalsInCages = () => {
       <button id="dashboard" onClick={() => navigate("/dashboard")}></button>
       <button id="logout" onClick={() => navigate("/")}></button>
 
+
       <div className="header">
-        <h1>
-          HAYVANLAR <h1>HAYVANLAR</h1>
+        <h1>HAYVANLAR
+        <h1>HAYVANLAR</h1>
         </h1>
-      </div>
-      <br></br>
-      <br></br>
+       
+   </div>
+   <br></br>
+    <br></br>
 
       <div className="container">
         <div id="holder">
@@ -230,12 +226,15 @@ const AnimalsInCages = () => {
         {isPopupOpen && selectedAnimal && (
           <div className="popup">
             <div className="popup-content">
-              <h2>{selectedAnimal.name} </h2>
+              <h2>{selectedAnimal.name}</h2>
               <img
-                src={selectedAnimal.imagesNormal}
+                src={
+                  selectedAnimal.status === 1
+                    ? selectedAnimal.imagesStatus1
+                    : selectedAnimal.imagesNormal
+                }
                 alt={selectedAnimal.name}
               />
-
               <p>{selectedAnimal.content}</p>
               <button style={{ marginLeft: "5px" }} onClick={rescueAnimal}>
                 Kurtar
@@ -263,6 +262,7 @@ const AnimalsInCages = () => {
             </div>
           </div>
         )}
+
 
         {insufficientKeys && (
           <div className="custom-alert">

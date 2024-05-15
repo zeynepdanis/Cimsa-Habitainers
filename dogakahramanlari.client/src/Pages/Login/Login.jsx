@@ -9,7 +9,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({
         username: '',
         password: ''
-    });
+    })
 
     const usernameHandler = (e) => {
         const usernameData = e.target.value;
@@ -41,6 +41,7 @@ const Login = () => {
                 console.log(content)
                 window.localStorage.setItem('token', content.accessToken);
                 window.localStorage.setItem('userId', content.userId);
+
                 navigate('/dashboard')
             } else {
                 alert('Giriş Yapılamadı')
@@ -50,7 +51,6 @@ const Login = () => {
             alert('Giriş Yapılamadı');
         }
     };
-
 
     return (
         <LoginWrapper>

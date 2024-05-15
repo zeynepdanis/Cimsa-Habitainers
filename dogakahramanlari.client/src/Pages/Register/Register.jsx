@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -92,30 +91,32 @@ const Register = () => {
           <div className="input-part">
 
             <div className="input-area">
-              <input className="input" placeholder="Ad" name="firstName" value={formData.firstName} onChange={handleChange} />
+              <input className="input" placeholder="Ad" />
             </div>
 
             <div className="input-area">
-              <input className="input" placeholder="Soyad" name="lastName" value={formData.lastName} onChange={handleChange} />
+              <input className="input" placeholder="Soyad" />
             </div>
 
             <div className="input-area">
               <UserIcon />
-              <input className="input" placeholder="Kullanıcı Adı" name="userName" value={formData.userName} onChange={handleChange} />
+              <input className="input" placeholder="Kullanıcı Adı" />
             </div>
+
 
             <div className="input-area">
               <Password />
-              <input type="password" className="input" placeholder="Şifre" name="password" value={formData.password} onChange={handleChange} />
+              <input type="password" className="input" placeholder="Şifre" />
             </div>
 
           </div>
         </div>
         <div className="button-container">
           <button onClick={backHomeHandler} className="back-icon">
-            <BackIcon />
+            {" "}
+            <BackIcon />{" "}
           </button>
-          <button onClick={registerUser} className="button">KAYIT OL</button>
+          <button className="button">KAYIT OL</button>
         </div>
       </div>
     </RegisterWrapper>

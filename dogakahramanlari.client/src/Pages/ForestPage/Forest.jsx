@@ -26,13 +26,14 @@ const Forest = () => {
     };
 
 
-
     useEffect(() => {
         fetch("http://localhost:5120/api/animals")
             .then(response => response.json())
             .then(data => {
                 const updatedAnimals = data.map(animal => ({
-                    ...animal
+                    ...animal,
+                    imagesNormal: `/black-animals/black-${animal.name.toLowerCase()}.png`,
+                    imagesStatus1: `/animals/${animal.name.toLowerCase()}.png`
                 }));
                 setAnimals(updatedAnimals);
             })
@@ -84,5 +85,3 @@ const Forest = () => {
 };
 
 export default Forest;
-
-

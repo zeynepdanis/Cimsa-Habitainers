@@ -93,9 +93,6 @@ body {
   /* Diğer öğelerin üzerine çıkması için */
 }
 
-
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -245,6 +242,7 @@ img.cage {
   text-align: center;
 }
 
+
 /* Pop-up stilleri */
 .second-popup {
   position: fixed;
@@ -266,6 +264,7 @@ img.cage {
   /* Diğer elemanların üzerinde olması için z-index değeri */
   text-align: center;
 }
+
 
 .popup-content {
   text-align: center;
@@ -407,4 +406,5 @@ img.cage {
   flex-direction: column;
   margin-top: 80px;
   font-size: xx-large;
+
 }
